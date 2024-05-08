@@ -26,10 +26,21 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: rgba(53, 53, 53, 0.158);
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(25px);
+    z-index: 1000;
     color: white;
     padding: 20px 0;
     margin: 0;
+}
+
+h1 {
+    font-size: 400%;
+    font-family: "Playfair Display";
 }
 
 section {
@@ -51,7 +62,7 @@ section {
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
     width: auto;
 }
 
@@ -74,7 +85,7 @@ nav a:hover {
 }
 
 .spacer {
-    aspect-ratio: 900/450;
+    aspect-ratio: 900/100;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -85,6 +96,36 @@ nav a:hover {
     background-image: url("./src/layered-waves1.svg");
 }
 
-h1, header{
-    letter-spacing: -1%;
+.layer2 {
+    background-image: url("./src/layered-waves2.svg");
+}
+
+h1,
+header {
+    letter-spacing: -2%;
+}
+
+.bodycontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.right {
+    flex: 1;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 400px;
 }

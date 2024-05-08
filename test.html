@@ -1,18 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <title>Container mit Bild und Text</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .right {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
-
 <body>
-
+    <div class="container">
+        <div class="left">
+            <h1>Große Überschrift</h1>
+            <p>Kleiner Text darunter.</p>
+        </div>
+        <div class="right">
+            <img class="image" src="./src/logo_white_pink_background.png" alt="Bildbeschreibung">
+        </div>
+    </div>
 </body>
-
 </html>

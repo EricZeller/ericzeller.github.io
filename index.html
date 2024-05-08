@@ -6,27 +6,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | ericzeller.github.io</title>
-    <link rel="icon" href="https://img.icons8.com/fluency-systems-regular/48/github.png">
+    <link rel="icon" href="./src/logo_z_round.png">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
+
 
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="example.png" alt="Logo">
+                <img src="./src/logo_z_white_nobackground.png" alt="Logo">
             </div>
             <nav>
-                <a href="#">HOME</a>
-                <a href="#">PROJECTS</a>
-                <a href="#">SERVERS</a>
+                <a href="./index.html">HOME</a>
+                <a href="./projects.html">PROJECTS</a>
+                <a href="./servers.html">SERVERS</a>
             </nav>
             <div class="menu-button">
-                Menu
+                <span class="material-symbols-outlined" id="menu-button">
+                    menu
+                    </span>
                 <!-- Hier kannst du dein Menü-Icon/Bild einfügen -->
                 <!-- Zum Beispiel: <img src="menu-icon.png" alt="Menu"> -->
             </div>
@@ -34,23 +42,41 @@
     </header>
 
     <section>
-        <h1>Projects.</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus a ut, necessitatibus quia labore neque corporis autem veniam ex. Quaerat tempora cum saepe voluptatum eaque, dolor blanditiis! Veniam, numquam.</p>
+        <div class="bodycontainer">
+            <div class="left">
+                <h1>Projects.</h1>
+                <p>View here my various projects, hosted on GitHub.</p>
+            </div>
+            <div class="right">
+                <img class="image" src="./src/logo_white_nobackground.png" alt="big picture">
+            </div>
+        </div>
     </section>
 
     <div class="spacer layer1"></div>
 
     <section class="pink">
-        <h1>Servers.</h1>
-        <p>Nostrum, eos? Vero cum voluptates amet, obcaecati iste blanditiis veritatis velit unde tempora possimus, porro earum qui eius hic! Dicta odit cum doloremque, esse quidem labore ullam voluptatem quas sunt?</p>
+        <div class="bodycontainer">
+            <div class="left">
+                <h1>Servers.</h1>
+                <p>An overview of my selfhosted server services, all running on a Raspberry Pi 4.</p>
+            </div>
+            <div class="right">
+                <img class="image" src="./src/logo_white_pink_background.png" alt="big picture">
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer layer2"></div>
+
+
+    <section>
+        <h1>Operating systems.</h1>
+        <p>A selection of operating systems I am using or used in the past.</p>
     </section>
     <section>
-        <h1>One Topic</h1>
-        <p>Atque, a, esse voluptates doloribus, illo soluta corporis commodi rerum debitis iure natus odit culpa. Illo, tenetur commodi est doloribus, quis amet expedita dolor dicta tempore qui, quas eum! Excepturi!</p>
-    </section>
-    <section>
-        <h1>One Topic</h1>
-        <p>In et error, quas nisi quis maiores aut eveniet dignissimos itaque necessitatibus iure blanditiis mollitia quisquam possimus delectus sequi perspiciatis odio illum? Temporibus harum nulla exercitationem, quas dolore vel. Voluptate.</p>
+        <h1>Downloads.</h1>
+        <p>Download here releases of Apps I created. Still expanding.</p>
     </section>
 
 </body>
