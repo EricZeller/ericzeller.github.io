@@ -25,6 +25,10 @@ body {
     background: #001220;
 }
 
+.pink {
+    background: #C62368;
+}
+
 header {
     background-color: rgba(53, 53, 53, 0.158);
     padding: 20px 0;
@@ -80,10 +84,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-.pink {
-    background: #C62368;
-}
-
 .spacer {
     aspect-ratio: 900/100;
     width: 100%;
@@ -98,6 +98,16 @@ nav a:hover {
 
 .layer2 {
     background-image: url("./src/layered-waves2.svg");
+}
+
+.layer3 {
+    aspect-ratio: 900/300;
+    background-image: url("./src/wave-haikei1.svg");
+}
+
+.layer4 {
+    aspect-ratio: 900/300;
+    background-image: url("./src/wave-haikei2.svg");
 }
 
 h1,
@@ -128,4 +138,8 @@ header {
     height: auto;
     display: block;
     max-height: 400px;
+}
+
+#menu-button {
+    cursor: pointer;
 }
