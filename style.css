@@ -63,6 +63,7 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    font-size: 120%;
 }
 
 .logo img {
@@ -81,7 +82,8 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #868686;
 }
 
 .spacer {
@@ -140,6 +142,46 @@ header {
     max-height: 400px;
 }
 
-#menu-button {
+span {
     cursor: pointer;
+}
+
+/*dropdown*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px #ffffff77;
+    z-index: 1;
+    animation: fadeIn 0.7s ease;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
