@@ -1,0 +1,90 @@
+:root {
+    --firstcolor: #353535d1;
+    --textcolor: #ffffff;
+    --backgroundcolor: #282828;
+    --linkcolor: #faebd7;
+    --linkhovercolor: #b8cbff;
+    --linkvisitedcolor: #ccffe6;
+    --backbtnbackgroundcolor: #779474;
+}
+
+.lightMode {
+    --firstcolor: #ffffff;
+    --textcolor: #212121;
+    --backgroundcolor: #5f5f5f;
+    --linkcolor: #282828;
+    --linkhovercolor: #888888;
+    --linkvisitedcolor: #3b6927;
+    --backbtnbackgroundcolor: #e8e8e8;
+}
+
+body {
+    margin: 0;
+    font-family: "Raleway";
+    color: white;
+    background: #001220;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin: 0;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 250px;
+    padding: 100px 20vw;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.pink {
+    background: #C62368;
+}
+
+.spacer {
+    aspect-ratio: 900/450;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url("./src/layered-waves1.svg");
+}
+
+h1, header{
+    letter-spacing: -1%;
+}

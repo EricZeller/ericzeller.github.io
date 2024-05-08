@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repositories</title>
+</head>
+
+<body>
+    <h1>Meine GitHub Repositories</h1>
+    <ul id="repos-list"></ul>
+
+    <script>
+        // GitHub Benutzername
+        const username = 'EricZeller';
+
+        // API-URL zum Abrufen der Repositories
+        const apiUrl = `https://api.github.com/users/${username}/repos`;
+
+        // Funktion zum Abrufen von Repositories
+        async function getRepos() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Fehler beim Abrufen der Repositories:', error);
+            }
+        }
+
+        // Funktion zum Anzeigen von Repositories auf der Webseite
+        async function displayRepos() {
+            const reposList = document.getElementById('repos-list');
+            const repos = await getRepos();
+
+            repos.forEach(repo => {
+                const listItem = document.createElement('li');
+                const repoLink = document.createElement('a');
+                repoLink.href = repo.html_url;
+                repoLink.textContent = repo.name;
+                listItem.appendChild(repoLink);
+
+                const description = document.createElement('p');
+                description.textContent = repo.description || 'Keine Beschreibung verfügbar';
+                listItem.appendChild(description);
+
+                reposList.appendChild(listItem);
+            });
+        }
+
+        // Anzeigen der Repositories beim Laden der Seite
+        displayRepos();
+    </script>
+</body>
+
+</html>
