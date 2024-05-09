@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuToggle.setAttribute('name', 'close');
             menuToggle.style.transition = 'transform 0.3s ease-in-out'; // Animiere die Transformation
             menuToggle.style.transform = 'rotate(180deg)';
+
         } else {
             menuToggle.setAttribute('name', 'menu');
             menuToggle.style.transition = 'transform 0.3s ease-in-out'; // Animiere die Transformation
@@ -16,3 +17,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+const observer = new IntersectionObserver((entries => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+}));
+
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));

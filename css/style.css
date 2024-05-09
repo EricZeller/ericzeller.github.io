@@ -18,7 +18,8 @@ h1 {
     font-family: "Playfair Display";
 }
 
-a, a:visited {
+a,
+a:visited {
     text-decoration: none;
     color: white;
 }
@@ -266,7 +267,27 @@ header {
 
     }
 
-    .layer3, .layer4 {
+    .layer3,
+    .layer4 {
         aspect-ratio: 200/150;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
     }
 }
