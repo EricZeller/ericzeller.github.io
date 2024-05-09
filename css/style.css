@@ -58,6 +58,9 @@ section {
 .logo img {
     height: 60px;
     width: auto;
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 nav a {
@@ -155,18 +158,16 @@ ion-icon {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px;
     background-color: #35353528;
-    ;
     backdrop-filter: blur(25px);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-
     padding-left: 15vw;
     padding-right: 15vw;
 }
@@ -184,7 +185,8 @@ header {
 }
 
 .menu li {
-    margin-right: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .menu li:last-child {
@@ -206,6 +208,12 @@ header {
         margin: 0;
         max-width: 100%;
         padding: 3vw;
+        justify-content: space-between;
+    }
+
+    .logo img{
+        margin-left: 0;
+        margin-right: 0;
     }
 
     h1 {
