@@ -1,27 +1,6 @@
 /*google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-:root {
-    --firstcolor: #353535d1;
-    --textcolor: #ffffff;
-    --backgroundcolor: #282828;
-    --linkcolor: #faebd7;
-    --linkhovercolor: #b8cbff;
-    --linkvisitedcolor: #ccffe6;
-    --backbtnbackgroundcolor: #779474;
-}
-
-.lightMode {
-    --firstcolor: #ffffff;
-    --textcolor: #212121;
-    --backgroundcolor: #5f5f5f;
-    --linkcolor: #282828;
-    --linkhovercolor: #888888;
-    --linkvisitedcolor: #3b6927;
-    --backbtnbackgroundcolor: #e8e8e8;
-}
-
 body {
     margin: 0;
     font-family: "Raleway";
@@ -33,18 +12,6 @@ body {
     background: #C62368;
 }
 
-header {
-    background-color: rgba(53, 53, 53, 0.158);
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    backdrop-filter: blur(25px);
-    z-index: 1000;
-    color: white;
-    padding: 20px 0;
-    margin: 0;
-}
 
 h1 {
     font-size: 400%;
@@ -73,10 +40,6 @@ section {
 .logo img {
     height: 60px;
     width: auto;
-}
-
-nav {
-    display: flex;
 }
 
 nav a {
@@ -137,48 +100,19 @@ header {
 .right {
     flex: 1;
     overflow: hidden;
+    margin: auto;
+    margin-left: 5vw;
+
+    display: flex;
 }
 
 .image {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 400px;
-}
-
-span {
-    cursor: pointer;
-}
-
-/*dropdown*/
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px #ffffff77;
-    z-index: 1;
-    animation: fadeIn 0.7s ease;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+    max-width: 100%;
+    min-width: 100px;
+    
 }
 
 @keyframes fadeIn {
@@ -188,5 +122,131 @@ span {
 
     to {
         opacity: 1;
+    }
+}
+
+ion-icon {
+    font-size: 42px;
+}
+
+/* Styles for desktop */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #35353528;; /* Transparenter Hintergrund */
+    backdrop-filter: blur(25px); /* Blur-Effekt */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Header über allem anderen positionieren */
+
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+}
+
+.menu-toggle,
+.close-toggle {
+    display: none;
+}
+
+/* Styles for mobile */
+@media only screen and (max-width: 768px) {
+
+    header {
+        margin: 0;
+        max-width: 100%;
+        padding: 3vw;
+    }
+
+    h1 {
+        font-size: 300%;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 12vh;
+        left: 0;
+        width: 100%;
+        background-color: #33333300;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .close-toggle {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .menu.active .close-toggle {
+        display: block;
+    }
+
+    .menu-toggle ion-icon {
+        display: none;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: end;
+        background: #001220;
+        padding-right: 20vw;
+        padding-top: 4vh;
+        height: 200vh;
+        z-index: 1100;
+        font-size: 250%;
+        letter-spacing: -2%;
+        margin-top: -1vh;
+    }
+
+    .menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        /* Abstand zwischen den Listenelementen */
     }
 }
