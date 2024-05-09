@@ -18,6 +18,19 @@ h1 {
     font-family: "Playfair Display";
 }
 
+a, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #868686;
+}
+
+.pink a:hover {
+    color: #001220;
+}
+
 section {
     position: relative;
     display: flex;
@@ -75,8 +88,8 @@ nav a:hover {
 }
 
 .layer4 {
-    aspect-ratio: 900/300;
-    background-image: url("../src/wave-haikei2.svg");
+    aspect-ratio: 800/300;
+    background-image: url("../src/layered-peaks-haikei.svg");
 }
 
 h1,
@@ -110,9 +123,9 @@ header {
     width: 100%;
     height: auto;
     display: block;
-    max-width: 100%;
+    max-width: 15vw;
     min-width: 100px;
-    
+
 }
 
 @keyframes fadeIn {
@@ -129,19 +142,19 @@ ion-icon {
     font-size: 42px;
 }
 
-/* Styles for desktop */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #35353528;; /* Transparenter Hintergrund */
-    backdrop-filter: blur(25px); /* Blur-Effekt */
+    background-color: #35353528;
+    ;
+    backdrop-filter: blur(25px);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Header über allem anderen positionieren */
+    z-index: 1000;
 
     padding-left: 15vw;
     padding-right: 15vw;
@@ -176,7 +189,6 @@ header {
     display: none;
 }
 
-/* Styles for mobile */
 @media only screen and (max-width: 768px) {
 
     header {
@@ -247,6 +259,14 @@ header {
     .menu li {
         margin-right: 0;
         margin-bottom: 10px;
-        /* Abstand zwischen den Listenelementen */
+    }
+
+    .spacer {
+        aspect-ratio: 100/50;
+
+    }
+
+    .layer3, .layer4 {
+        aspect-ratio: 200/150;
     }
 }
