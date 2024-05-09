@@ -7,25 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | ericzeller.github.io</title>
     <link rel="icon" href="./src/logo_z_round.png">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 
 
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
+        <div class="headercontainer">
+            <a href="./index.html" class="logo">
                 <img src="./src/logo_z_white_nobackground.png" alt="Logo">
-            </div>
+            </a>
             <nav>
                 <a href="./index.html">HOME</a>
                 <a href="./projects.html">PROJECTS</a>
@@ -33,9 +25,7 @@
             </nav>
             <div class="menu-button">
                 <div class="dropdown">
-                    <span class="material-symbols-outlined" id="menu-btn">
-                        menu
-                    </span>
+                    <ion-icon name="menu"></ion-icon>
                     <div class="dropdown-content">
                         <a href="./index.html">Home</a>
                         <a href="./projects.html">Projects</a>
@@ -91,6 +81,10 @@
 
     <div class="spacer layer4"></div>
 
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
