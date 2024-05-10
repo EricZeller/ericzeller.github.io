@@ -64,10 +64,10 @@
                 name: "Tippy",
                 githubRepo: "EricZeller/tippy"
             },
-            // Weitere Projekte hier
+            // projects to add here
         ];
 
-        const accessToken = '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';
+        const accessToken = 'none';
 
         const projectContainer = document.querySelector('.projectcontainer');
 
@@ -76,7 +76,6 @@
             const owner = ownerAndRepo[0];
             const repo = ownerAndRepo[1];
 
-            // API-Anfrage, um Informationen über das Repository abzurufen
             fetch(`https://api.github.com/repos/${owner}/${repo}`, {
                 headers: {
                     Authorization: `token ${accessToken}`
@@ -84,10 +83,8 @@
             })
                 .then(response => response.json())
                 .then(repoInfo => {
-                    // Beschreibung des Repositories
                     const description = repoInfo.description;
 
-                    // API-Anfrage, um die Releases für jedes Projekt abzurufen
                     fetch(`https://api.github.com/repos/${owner}/${repo}/releases`, {
                         headers: {
                             Authorization: `token ${accessToken}`
@@ -95,13 +92,11 @@
                     })
                         .then(response => response.json())
                         .then(releases => {
-                            // Verarbeite die Releases und erstelle das HTML-Element für das Projekt
-                            const latestRelease = releases[0]; // Annahme: Das erste Release in der Liste ist das neueste
+                            const latestRelease = releases[0];
                             const projectName = project.name;
                             const latestVersion = latestRelease.tag_name;
                             const downloadLink = latestRelease.assets[0].browser_download_url;
 
-                            // Erstelle das HTML-Element für das Projekt
                             const projectElement = document.createElement('div');
                             projectElement.classList.add('project');
 
@@ -129,10 +124,9 @@
                             projectElement.appendChild(downloadLinkElement);
 
                             const iconElement = document.createElement('ion-icon');
-                            iconElement.setAttribute('name', 'cloud-download'); // Hier kannst du das gewünschte Icon festlegen
+                            iconElement.setAttribute('name', 'cloud-download'); 
                             downloadLinkElement.appendChild(iconElement);
 
-                            // Füge das HTML-Element in den Container auf der Seite ein
                             projectContainer.appendChild(projectElement);
                         })
                         .catch(error => console.error('Fehler beim Abrufen der Releases:', error));
