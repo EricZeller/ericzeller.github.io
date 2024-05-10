@@ -161,6 +161,10 @@ ion-icon {
     font-size: 42px;
 }
 
+.download-link ion-icon {
+    font-size: 18px;
+}
+
 header {
     display: flex;
     justify-content: center;
@@ -192,6 +196,11 @@ header {
 .menu li {
     margin-right: 30px;
     margin-left: 30px;
+    transition: all 0.5s;
+}
+
+.menu li:hover {
+    transform: scale(1.2);
 }
 
 .menu li:last-child {
@@ -341,4 +350,33 @@ header {
     align-items: center;
     min-height: 2vh;
     padding: 0;
+}
+
+
+
+.projectcontainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-gap: 40px;
+}
+
+.project {
+    background-color: #ffffff1e;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+    .projectcontainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project:hover {
+        transform: scale(1.05);
+    }
 }

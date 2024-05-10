@@ -8,6 +8,11 @@
     <title>Downloads | ericzeller.github.io</title>
     <link rel="icon" href="./src/logo_z_round.png">
     <link rel="stylesheet" href="./css/style.css">
+
+    <style type = text/css>
+        a.download-link {text-decoration: underline;}
+    </style>
+
 </head>
 
 
@@ -34,7 +39,15 @@
 
     </header>
 
-    
+    <section class="hidden" style="padding-bottom: 0;">
+        <h1>Downloads.</h1>
+    </section>
+
+    <div class="projectcontainer hidden"></div>
+
+    <section class="hidden">
+        <p>Still expanding.</p>
+    </section>
 
     <div class="spacer layer4"></div>
 
@@ -45,6 +58,88 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./scripts/main.js"></script>
+    <script>
+        const projects = [
+            {
+                name: "Tippy",
+                githubRepo: "EricZeller/tippy"
+            },
+            // Weitere Projekte hier
+        ];
+
+        const accessToken = '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';
+
+        const projectContainer = document.querySelector('.projectcontainer');
+
+        projects.forEach(project => {
+            const ownerAndRepo = project.githubRepo.split('/');
+            const owner = ownerAndRepo[0];
+            const repo = ownerAndRepo[1];
+
+            // API-Anfrage, um Informationen über das Repository abzurufen
+            fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+                headers: {
+                    Authorization: `token ${accessToken}`
+                }
+            })
+                .then(response => response.json())
+                .then(repoInfo => {
+                    // Beschreibung des Repositories
+                    const description = repoInfo.description;
+
+                    // API-Anfrage, um die Releases für jedes Projekt abzurufen
+                    fetch(`https://api.github.com/repos/${owner}/${repo}/releases`, {
+                        headers: {
+                            Authorization: `token ${accessToken}`
+                        }
+                    })
+                        .then(response => response.json())
+                        .then(releases => {
+                            // Verarbeite die Releases und erstelle das HTML-Element für das Projekt
+                            const latestRelease = releases[0]; // Annahme: Das erste Release in der Liste ist das neueste
+                            const projectName = project.name;
+                            const latestVersion = latestRelease.tag_name;
+                            const downloadLink = latestRelease.assets[0].browser_download_url;
+
+                            // Erstelle das HTML-Element für das Projekt
+                            const projectElement = document.createElement('div');
+                            projectElement.classList.add('project');
+
+                            const titleElement = document.createElement('h2');
+                            titleElement.textContent = projectName;
+                            projectElement.appendChild(titleElement);
+
+                            const descriptionElement = document.createElement('p');
+                            descriptionElement.classList.add('description');
+                            descriptionElement.textContent = description;
+                            projectElement.appendChild(descriptionElement);
+
+                            const versionElement = document.createElement('p');
+                            versionElement.classList.add('latest-version');
+                            versionElement.textContent = `Current version: ${latestVersion}`;
+                            projectElement.appendChild(versionElement);
+
+                            const downloadLinkElement = document.createElement('a');
+                            downloadLinkElement.classList.add('download-link');
+
+                            
+
+                            downloadLinkElement.textContent = 'Download ';
+                            downloadLinkElement.href = downloadLink;
+                            projectElement.appendChild(downloadLinkElement);
+
+                            const iconElement = document.createElement('ion-icon');
+                            iconElement.setAttribute('name', 'cloud-download'); // Hier kannst du das gewünschte Icon festlegen
+                            downloadLinkElement.appendChild(iconElement);
+
+                            // Füge das HTML-Element in den Container auf der Seite ein
+                            projectContainer.appendChild(projectElement);
+                        })
+                        .catch(error => console.error('Fehler beim Abrufen der Releases:', error));
+                })
+                .catch(error => console.error('Fehler beim Abrufen der Repository-Informationen:', error));
+        });
+    </script>
 </body>
 
 </html>
