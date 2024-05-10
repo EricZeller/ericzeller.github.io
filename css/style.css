@@ -101,9 +101,15 @@ nav a:hover {
 }
 
 .layer5 {
-    aspect-ratio: 1000/300;
+    aspect-ratio: 900/200;
 
     background-image: url("../src/stacked-waves-haikei.svg");
+}
+
+.layer6 {
+    aspect-ratio: 900/300;
+
+    background-image: url("../src/low-poly-grid-haikei.svg");
 }
 
 h1,
@@ -269,10 +275,10 @@ header {
         padding-right: 3vw;
         padding-top: 4vh;
         height: 200vh;
-        z-index: 1100;
+        z-index: 900;
         font-size: 250%;
         letter-spacing: -2%;
-        margin-top: -1vh;
+        margin-top: -2.75vh;
     }
 
     .menu li {
@@ -286,7 +292,8 @@ header {
     }
 
     .layer3,
-    .layer4 {
+    .layer4,
+    .layer5 {
         aspect-ratio: 200/150;
     }
 }
@@ -313,4 +320,12 @@ header {
 .datenschutzcontainer {
     padding: 10vw;
     padding-top: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 2vh;
+    padding: 0;
 }

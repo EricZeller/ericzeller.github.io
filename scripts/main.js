@@ -33,3 +33,8 @@ const observer = new IntersectionObserver((entries => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+
+var currentYear = new Date().getFullYear();
+document.getElementById("copyright").innerHTML = "&#169; " + currentYear + ", all rights reserved.";
+
