@@ -14,3 +14,5 @@ Downloads: fix JS to use left right flex
 Server: available status
 
 Mobile menu: different background, animation -> in JS?
+
+Add GitHub link

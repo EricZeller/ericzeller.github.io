@@ -372,6 +372,7 @@ header {
     padding: 20px;
     transition: all 0.3s;
     column-gap: 30px;
+    max-width: 95vw;
 }
 
 .project-left {
