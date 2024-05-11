@@ -1,114 +1,88 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My projects | ericzeller.github.io</title>
-    <link rel="icon" href="src/img/quack-duck.gif">
-    <link rel="stylesheet" href="src/style.css">
+    <title>Home | ericzeller.github.io</title>
+    <link rel="icon" href="./src/logo_z_round.png">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
+
+
 <body>
-    <header class="header">
-        <h1>My projects</h1>
+    <header>
+        <a href="./index.html" class="logo">
+            <img src="./src/logo_z_white_nobackground.png" alt="Logo">
+        </a>
+        <ion-icon name="menu" class="menu-toggle"></ion-icon>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./servers.html">Server</a></li>
+                <li><a href="./servers.html">OSs & Software</a></li>
+                <li><a href="./downloads.html">Downloads</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+
+        </nav>
+
+
     </header>
-    <div class="container">
-        <div class="project">
-            <div class="project-details">
-                <img src="https://github.com/EricZeller/snake/blob/main/img/repsnake.png?raw=true" alt="Icon 1">
-                <h2>Snake</h2>
-                <p>Basic snake game made in HTML and Javascript, responsive for mobile and desktop, also providing touch
-                    controls</p>
-                <a href="https://ericzeller.github.io/snake/">Play the game</a>
-                <p></p>
-                <a href="https://github.com/EricZeller/snake/blob/main/script.js">Javascript sourcecode</a>
+
+    <section>
+        <div class="bodycontainer">
+            <div class="left hidden">
+                <h1><a href="./projects.html">Projects.</a></h1>
+                <p>View here my various projects, hosted on GitHub.</p>
+            </div>
+            <div class="right">
+                <img class="image" src="./src/logo_white_pink_background.png" alt="big picture">
             </div>
         </div>
+    </section>
 
-        <div class="project">
-            <div class="project-details">
-                <img src="https://github.com/EricZeller/tictactoe/blob/main/favicon.png?raw=true" alt="Icon 2">
-                <h2>Tic Tac Toe</h2>
-                <p>Simple Tic Tac Toe game for two players on one device</p>
-                <a href="https://ericzeller.github.io/tictactoe/">Play the game</a>
-                <p></p>
-                <a href="https://github.com/EricZeller/tictactoe/blob/main/tictactoe.js">Javascript sourcecode</a>
+    <div class="spacer layer1"></div>
+
+    <section class="pink">
+        <div class="bodycontainer">
+            <div class="left hidden">
+                <h1><a href="./servers.html">Servers.</a></h1>
+                <p>An overview of my selfhosted server services, all running on a Raspberry Pi 4.</p>
+            </div>
+            <div class="right">
+                <img class="image" src="./src/logo_white_pink_background.png" alt="big picture">
             </div>
         </div>
+    </section>
 
-        <div class="project">
-            <div class="project-details">
-                <img src="https://github.com/EricZeller/image-classifier/blob/main/favicon.png?raw=true" alt="Icon 1">
-                <h2>Image classifier</h2>
-                <p>An image classifier using a <a href="https://www.tensorflow.org">TensorFlow.js</a> pretrained model. Just upload an image and let the AI classify it</p>
-                <a href="https://ericzeller.github.io/image-classifier/">Try it out</a>
-                <p></p>
-                <a href="https://github.com/EricZeller/image-classifier/blob/main/index.html">Sourcecode </a> | 
-                <a href="https://github.com/tensorflow/tfjs-models/tree/master/mobilenet"> TensorFlow model (mobilenet)</a>
-            </div>
-        </div>
+    <div class="spacer layer2"></div>
 
-        <div class="project">
-            <div class="project-details">
-                <img src="https://github.com/EricZeller/rockpaperscissor/blob/main/img/rock-paper-scissors-colored.png?raw=true"
-                    alt="Icon 2">
-                <h2>Rock Paper Scissors</h2>
-                <p>Simple game against random bot</p>
-                <a href="https://ericzeller.github.io/rockpaperscissor/">Play the game</a>
-                <p></p>
-                <a href="https://github.com/EricZeller/rockpaperscissor/blob/main/script.js">Javascript sourcecode</a>
-                <p></p>
-            </div>
-        </div>
 
-        <div class="project">
-            <div class="project-details">
-                <img src="src/img/cpp-python.png" alt="Icon 2">
-                <h2>Serial USB clock</h2>
-                <p>Clock build with a Nucleo and Python via serial USB</p>
-                <a href="https://github.com/EricZeller/serialPythonUSBClock/blob/main/main.cpp">C++ code for the
-                    Nucleo</a>
-                <p></p>
-                <a href="https://github.com/EricZeller/serialPythonUSBClock/blob/main/uhrzeit_serial.py">Python code for
-                    sending the time</a>
-            </div>
-        </div>
+    <section class="hidden">
+        <h1><a href="./oss.html">OSs and software.</a></h1>
+        <p>A selection of operating systems and tools I am using.</p>
+    </section>
 
-        <div class="project">
-            <div class="project-details">
-                <img src="src/img/java.png" alt="Icon 2">
-                <h2>Towers of Hanoi</h2>
-                <p>Algorithm for graphically solving towers of hanoi in Java</p>
-                <a href="https://github.com/EricZeller/TowersOfHanoi/blob/main/tuermehanoi.java">Java sourcecode</a>
-                <p></p>
-            </div>
-        </div>
+    <section class="hidden">
+        <h1><a href="./downloads.html">Downloads.</a></h1>
+        <p>Download here releases of apps I created. Still expanding.</p>
+    </section>
 
-        <div class="project">
-            <div class="project-details">
-                <img src="src/img/raspberry-python.png" alt="Icon 2">
-                <h2>Python LCD Raspberry Pi</h2>
-                <p>Python programm to drive a LCD display via I2C with an Raspberry Pi, for example to monitor the stats
-                    using a library</p>
-                <a
-                    href="https://github.com/EricZeller/raspberry-pi-lcd/blob/214cc30faaa1c90e7212f1800a9ddda2a07f8436/statsLCD.py">Python
-                    sourcecode</a>
-                <p></p>
-                <a href="https://github.com/the-raspberry-pi-guy/lcd">Used library</a> by <a
-                    href="https://github.com/the-raspberry-pi-guy">the-raspberry-pi-guy</a>
-                <p></p>
-            </div>
-        </div>
+    <div class="spacer layer4"></div>
 
-    </div>
+    <section class="pink footer">
+        <p class="hidden" id="copyright"></p>
+    </section>
 
-    <footer class="footer">
-        <img src="src/img/dancing-duck-danse.gif" width="80px">
-        <p><a href="https://github.com/EricZeller">My GitHub page</a></p>
-        <p></p>
-        <p><a href="https://github.com/EricZeller?tab=repositories">My other projects/repositories</a></p>
-    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
