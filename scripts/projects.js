@@ -43,9 +43,17 @@ async function fetchAndDisplayRepos() {
       projectLeftDiv.appendChild(lastCommitText);
       projectLeftDiv.appendChild(languageElement);
 
-      // Logo des Repositories
       const logoImg = document.createElement('img');
-      logoImg.src = `${repo.html_url}/raw/main/logo.png`;
+      let logoSrc = `${repo.html_url}/raw/main/logo.png`; // Hauptbranch
+      try {
+        const response = await fetch(logoSrc);
+        if (!response.ok) {
+          throw new Error('Not found');
+        }
+      } catch {
+        logoSrc = `${repo.html_url}/raw/master/logo.png`; // Master-Branch als Fallback
+      }
+      logoImg.src = logoSrc;
       logoImg.alt = 'logo';
 
       // Projekt-Div zusammenfügen
