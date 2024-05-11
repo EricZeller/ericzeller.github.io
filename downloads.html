@@ -67,8 +67,6 @@
             // projects to add here
         ];
 
-        const accessToken = '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';
-
         const projectContainer = document.querySelector('.projectcontainer');
 
         projects.forEach(project => {
@@ -76,20 +74,12 @@
             const owner = ownerAndRepo[0];
             const repo = ownerAndRepo[1];
 
-            fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-                headers: {
-                    Authorization: `token ${accessToken}`
-                }
-            })
+            fetch(`https://api.github.com/repos/${owner}/${repo}`)
                 .then(response => response.json())
                 .then(repoInfo => {
                     const description = repoInfo.description;
 
-                    fetch(`https://api.github.com/repos/${owner}/${repo}/releases`, {
-                        headers: {
-                            Authorization: `token ${accessToken}`
-                        }
-                    })
+                    fetch(`https://api.github.com/repos/${owner}/${repo}/releases`)
                         .then(response => response.json())
                         .then(releases => {
                             const latestRelease = releases[0];
