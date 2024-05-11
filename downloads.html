@@ -119,9 +119,9 @@
 
                             projectContainer.appendChild(projectElement);
                         })
-                        .catch(error => console.error('Fehler beim Abrufen der Releases:', error));
+                        .catch(error => console.error('Failed to get releases:', error));
                 })
-                .catch(error => console.error('Fehler beim Abrufen der Repository-Informationen:', error));
+                .catch(error => console.error('Failed to get repo informations', error));
         });
     </script>
 </body>
