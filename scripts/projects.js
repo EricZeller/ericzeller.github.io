@@ -45,7 +45,7 @@ async function fetchAndDisplayRepos() {
 
       // Logo des Repositories
       const logoImg = document.createElement('img');
-      logoImg.src = `${repo.html_url}/raw/master/logo.png`;
+      logoImg.src = `${repo.html_url}/raw/main/logo.png`;
       logoImg.alt = 'logo';
 
       // Projekt-Div zusammenfügen
