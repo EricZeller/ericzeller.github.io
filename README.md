@@ -9,7 +9,7 @@ Target blank on some links
 
 Projects page: add logo/icon
 
-Downloads: 
+Downloads: fix JS to use left right flex
 
 Server: available status
 

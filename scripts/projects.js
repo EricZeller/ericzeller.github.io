@@ -1,5 +1,3 @@
-const accessToken = process.env.ACCESS_TOKEN;
-
 // GitHub Benutzername
 const username = 'EricZeller';
 
@@ -9,11 +7,7 @@ const apiUrl = `https://api.github.com/users/${username}/repos`;
 // Funktion zum Abrufen der Repositories und Anzeigen
 async function fetchAndDisplayRepos() {
   try {
-    const response = await fetch(apiUrl, {
-      headers: {
-        Authorization: `token ${accessToken}`
-      }
-    });
+    const response = await fetch(apiUrl);
     const repos = await response.json();
 
     // Durchlaufen der Repositories und Erstellen der Projekt-Divs
