@@ -1,5 +1,3 @@
-const token = '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';
-
 // GitHub Benutzername
 const username = 'EricZeller';
 
