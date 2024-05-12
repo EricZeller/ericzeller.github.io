@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <style type = text/css>
-        a.download-link {text-decoration: underline;}
+        .project a {text-decoration: underline;}
+        ion-icon {font-size: 18px;}
     </style>
 
 </head>
@@ -39,13 +40,13 @@
 
     </header>
 
-    <section class="hidden" style="padding-bottom: 0;">
+    <section style="padding-bottom: 0;">
         <h1>Downloads.</h1>
     </section>
 
     <div class="projectcontainer hidden"></div>
 
-    <section class="hidden">
+    <section>
         <p>Still expanding.</p>
     </section>
 
@@ -62,7 +63,8 @@
         const projects = [
             {
                 name: "Randy",
-                githubRepo: "EricZeller/tippy"
+                githubRepo: "EricZeller/randy",
+                icon: "kotlin.png"
             },
             // projects to add here
         ];
@@ -90,19 +92,38 @@
                             const projectElement = document.createElement('div');
                             projectElement.classList.add('project');
 
+                            const projectElementLeft = document.createElement('div');
+                            projectElementLeft.classList.add('project-left');
+
                             const titleElement = document.createElement('h2');
                             titleElement.textContent = projectName;
-                            projectElement.appendChild(titleElement);
+                            projectElementLeft.appendChild(titleElement);
 
                             const descriptionElement = document.createElement('p');
                             descriptionElement.classList.add('description');
                             descriptionElement.textContent = description;
-                            projectElement.appendChild(descriptionElement);
+                            projectElementLeft.appendChild(descriptionElement);
 
                             const versionElement = document.createElement('p');
                             versionElement.classList.add('latest-version');
                             versionElement.textContent = `Current version: ${latestVersion}`;
-                            projectElement.appendChild(versionElement);
+                            projectElementLeft.appendChild(versionElement);
+
+                            
+
+
+                            const repoLinkElement = document.createElement('a');
+                            repoLinkElement.textContent = 'Repository ';
+                            repoLinkElement.href = `https://github.com/${owner}/${repo}`;
+                            projectElementLeft.appendChild(repoLinkElement);
+
+                            const iconElementGitHub = document.createElement('ion-icon');
+                            iconElementGitHub.setAttribute('name', 'logo-github'); 
+                            repoLinkElement.appendChild(iconElementGitHub);
+
+
+                            const emptyElement = document.createElement('p');
+                            projectElementLeft.appendChild(emptyElement);
 
                             const downloadLinkElement = document.createElement('a');
                             downloadLinkElement.classList.add('download-link');
@@ -111,13 +132,22 @@
 
                             downloadLinkElement.textContent = 'Download ';
                             downloadLinkElement.href = downloadLink;
-                            projectElement.appendChild(downloadLinkElement);
+                            projectElementLeft.appendChild(downloadLinkElement);
 
                             const iconElement = document.createElement('ion-icon');
                             iconElement.setAttribute('name', 'cloud-download'); 
                             downloadLinkElement.appendChild(iconElement);
 
+                            projectElement.appendChild(projectElementLeft);
+
+                            const projectIcon = document.createElement('img');
+                            projectIcon.src = `./icons/${project.icon}`;
+                            projectElement.appendChild(projectIcon);
+
+
                             projectContainer.appendChild(projectElement);
+
+                            
                         })
                         .catch(error => console.error('Failed to get releases:', error));
                 })
