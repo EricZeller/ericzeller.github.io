@@ -115,6 +115,7 @@
                             const repoLinkElement = document.createElement('a');
                             repoLinkElement.textContent = 'Repository ';
                             repoLinkElement.href = `https://github.com/${owner}/${repo}`;
+                            repoLinkElement.target = '_blank';
                             projectElementLeft.appendChild(repoLinkElement);
 
                             const iconElementGitHub = document.createElement('ion-icon');
