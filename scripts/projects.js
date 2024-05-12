@@ -1,3 +1,71 @@
+
+
+const projects = [
+  {
+    name: "Randy in Flutter",
+    githubRepo: "EricZeller/flutter_randy",
+    languages: "Dart, Flutter as framework",
+    description: "Same principle as Randy, written with the Flutter framework for more devices instead of only Android with Kotlin",
+    logo: "flutter.png"
+  },
+  {
+    name: "Randy",
+    githubRepo: "EricZeller/randy",
+    languages: "Kotlin",
+    description: "Simple random number generator, written in Kotlin for Android",
+    logo: "kotlin.png"
+  },
+  {
+    name: "Snake",
+    githubRepo: "EricZeller/snake",
+    languages: "JavaScript, HTML",
+    description: "Snake game with keyboard and touch controls, written in JavaScript",
+    logo: "javascript.png"
+  },
+  // projects to add here
+];
+
+const projectContainer = document.querySelector('.projectcontainer');
+
+
+projects.forEach(project => {
+  const githubLink = `https://github.com/${project.githubRepo}`;
+  
+  const projectElement = document.createElement('div');
+  projectElement.classList.add('project');
+
+  const projectElementLeft = document.createElement('div');
+  projectElementLeft.classList.add('project-left');
+
+  const projectTitleLink = document.createElement('a');
+  projectTitleLink.href = githubLink;
+  projectTitleLink.innerHTML = `<h2>${project.name}</h2>`;
+
+  const projectLanguages = document.createElement('p');
+  projectLanguages.textContent = `Languages: ${project.languages}`;
+
+  const projectDescription = document.createElement('p');
+  projectDescription.textContent = project.description;
+
+  projectElementLeft.appendChild(projectTitleLink);
+  projectElementLeft.appendChild(projectLanguages);
+  projectElementLeft.appendChild(projectDescription);
+
+  projectElement.appendChild(projectElementLeft);
+
+
+  const projectLogo = document.createElement('img');
+  projectLogo.src = `../icons/${project.logo}`;
+  projectElement.appendChild(projectLogo);
+
+  projectContainer.appendChild(projectElement);
+})
+
+
+
+
+/*
+
 // GitHub Benutzername
 const username = 'EricZeller';
 
@@ -90,3 +158,4 @@ async function getPrimaryLanguage(repo) {
 
 // Repos abrufen und anzeigen, wenn die Seite geladen ist
 window.onload = fetchAndDisplayRepos;
+*/
