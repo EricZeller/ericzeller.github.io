@@ -112,6 +112,16 @@ nav a:hover {
     background-image: url("../src/low-poly-grid-haikei.svg");
 }
 
+.layer7 {
+    aspect-ratio: 900/300;
+    background-image: url("../src/layered-waves-haikei.svg");
+}
+
+.layer8 {
+    aspect-ratio: 900/100;
+    background-image: url("../src/layered-waves-transition-oss.svg");
+}
+
 h1,
 header {
     letter-spacing: -2%;
@@ -317,7 +327,9 @@ header {
 
     .layer3,
     .layer4,
-    .layer5 {
+    .layer5,
+    .layer7,
+    .layer8 {
         aspect-ratio: 200/150;
     }
 }
