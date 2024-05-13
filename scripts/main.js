@@ -36,5 +36,4 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 
 var currentYear = new Date().getFullYear();
-document.getElementById("copyright").innerHTML = "&#169; " + currentYear + ", all rights reserved.";
-
+document.getElementById("copyright").innerHTML = '<a href="https://github.com/EricZeller"><ion-icon name="logo-github"></ion-icon></a>' + "<br>" + "&#169; " + currentYear + ", all rights reserved.";
