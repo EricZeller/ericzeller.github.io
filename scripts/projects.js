@@ -6,7 +6,7 @@ const projects = [
     githubRepo: "EricZeller/flutter_randy",
     languages: "Dart, Flutter as framework",
     description: "Same principle as Randy, written with the Flutter framework for more devices instead of only Android with Kotlin",
-    logo: "flutter.png"
+    logo: "cross.png"
   },
   {
     name: "Randy",

@@ -394,6 +394,8 @@ header {
     display: block;
     max-height: 7vh;
     min-height: 40px;
+    background: #ffffff38;
+    border-radius: 100%;
 }
 
 @media (min-width: 1000px) {
