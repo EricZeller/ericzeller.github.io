@@ -394,11 +394,11 @@ header {
     display: block;
     max-height: 7vh;
     min-height: 40px;
-    background: #ffffff38;
+    background: #61616149;
     border-radius: 100%;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
     .projectcontainer {
         grid-template-columns: repeat(2, 1fr);
     }
