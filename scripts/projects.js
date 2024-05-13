@@ -22,6 +22,13 @@ const projects = [
     description: "Snake game with keyboard and touch controls, written in JavaScript",
     logo: "javascript.png"
   },
+  {
+    name: "Towers of Hanoi",
+    githubRepo: "EricZeller/TowersOfHanoi",
+    languages: "Java",
+    description: "Towers of Hanoi algorithm, with variable number of plates and visual states of the progress on the terminal",
+    logo: "java.png"
+  },
   // projects to add here
 ];
 
