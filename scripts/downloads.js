@@ -75,9 +75,12 @@ projects.forEach(project => {
                     latestReleaseLinkElement.target = '_blank';
                     projectElementLeft.appendChild(latestReleaseLinkElement);
 
-                    projectElementLeft.appendChild(emptyElement);
+                    const emptyElement2 = document.createElement('p');
+                    projectElementLeft.appendChild(emptyElement2);
 
-                    latestReleaseLinkElement.appendChild(iconElementGitHub);
+                    const iconElementGitHub2 = document.createElement('ion-icon');
+                    iconElementGitHub.setAttribute('name', 'logo-github');
+                    latestReleaseLinkElement.appendChild(iconElementGitHub2);
 
                     latestRelease.assets.forEach(asset => {
                         const platform = detectPlatform(asset.content_type);
