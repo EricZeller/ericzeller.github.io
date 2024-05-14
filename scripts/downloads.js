@@ -82,7 +82,7 @@ projects.forEach(project => {
                         if (platform) {
                             const downloadLinkElement = document.createElement('a');
                             downloadLinkElement.classList.add('download-link');
-                            downloadLinkElement.textContent = `Download (${platform})`;
+                            downloadLinkElement.textContent = `Download (${platform}) `;
                             downloadLinkElement.href = asset.browser_download_url;
                             projectElementLeft.appendChild(downloadLinkElement);
 
