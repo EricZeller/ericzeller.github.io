@@ -122,9 +122,8 @@ nav a:hover {
     background-image: url("../img/layered-waves-transition-oss.svg");
 }
 
-h1,
-header {
-    letter-spacing: -2%;
+h1 {
+    letter-spacing: -2px;
 }
 
 .bodycontainer {
@@ -152,8 +151,8 @@ header {
     width: 100%;
     height: auto;
     display: block;
-    max-width: 15vw;
-    min-width: 100px;
+    max-width: 225vw;
+    min-width: 200px;
 
 }
 
@@ -188,7 +187,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 800;
     padding-left: 15vw;
     padding-right: 15vw;
 }
@@ -223,9 +222,9 @@ header {
     text-decoration: none;
 }
 
-.menu-toggle,
-.close-toggle {
+.menu-toggle {
     display: none;
+    z-index: 901;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -239,7 +238,6 @@ header {
 
     .logo img {
         margin-left: 0;
-        margin-right: 0;
     }
 
     h1 {
@@ -262,7 +260,8 @@ header {
     }
 
     .image {
-        max-width: 60vw;
+        width: 60vw;
+        max-width: 250px;
     }
 
     .right {
@@ -273,11 +272,15 @@ header {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 12vh;
+        top: 0vh;
         left: 0;
         width: 100%;
-        background-color: #33333300;
+        background-image: url('../img/low-poly-grid-haikei.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
+
 
     .menu.active {
         display: flex;
@@ -292,16 +295,7 @@ header {
         color: #fff;
     }
 
-    .close-toggle {
-        display: none;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        color: #fff;
-    }
-
-    .menu.active .close-toggle {
+    .menu.active {
         display: block;
     }
 
@@ -313,15 +307,14 @@ header {
         display: flex;
         flex-direction: column;
         width: 100vw;
+        height: 100vh;
         align-items: end;
-        background: #001220;
-        padding-right: 3vw;
-        padding-top: 4vh;
-        height: 200vh;
+        padding-right: 20px;
+        padding-top: 40px;
         z-index: 900;
         font-size: 200%;
-        letter-spacing: -2%;
-        margin-top: -2.75vh;
+        letter-spacing: -2px;
+        margin-top: 5vh;
     }
 
     .menu li {
