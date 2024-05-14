@@ -69,8 +69,6 @@ projects.forEach(project => {
 })
 
 
-
-
 /*
 
 // GitHub Benutzername

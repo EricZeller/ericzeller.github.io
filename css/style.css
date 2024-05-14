@@ -101,9 +101,9 @@ nav a:hover {
 }
 
 .layer5 {
-    aspect-ratio: 900/200;
+    aspect-ratio: 900/300;
 
-    background-image: url("../src/stacked-waves-haikei.svg");
+    background-image: url("../src/layered-waves-transition.svg");
 }
 
 .layer6 {

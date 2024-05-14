@@ -79,7 +79,7 @@ projects.forEach(project => {
                     projectElementLeft.appendChild(emptyElement2);
 
                     const iconElementGitHub2 = document.createElement('ion-icon');
-                    iconElementGitHub.setAttribute('name', 'logo-github');
+                    iconElementGitHub2.setAttribute('name', 'logo-github');
                     latestReleaseLinkElement.appendChild(iconElementGitHub2);
 
                     latestRelease.assets.forEach(asset => {
