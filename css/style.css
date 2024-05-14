@@ -419,4 +419,8 @@ header {
         transform: scale(1.05);
         background-color: #ffffff38;
     }
+
+    .bodycontainer {
+        flex-direction: row;
+    }
 }
