@@ -254,10 +254,19 @@ header {
     .bodycontainer {
         padding-left: 0px;
         padding-right: 0px;
+        flex-direction: column;
+    }
+
+    .left {
+        padding: 0;
     }
 
     .image {
-        max-width: none;
+        max-width: 60vw;
+    }
+
+    .right {
+        margin: auto;
     }
 
     .menu {
@@ -382,7 +391,7 @@ header {
 
 .project {
     background-color: #ffffff1e;
-    border-radius: 18px;
+    border-radius: 20px;
     display: flex;
     flex-direction: row;
     padding: 20px;
@@ -407,7 +416,7 @@ header {
     max-height: 7vh;
     min-height: 40px;
     background: #61616149;
-    border-radius: 100%;
+    border-radius: 10px;
 }
 
 @media (min-width: 700px) {
@@ -418,9 +427,5 @@ header {
     .project:hover {
         transform: scale(1.05);
         background-color: #ffffff38;
-    }
-
-    .bodycontainer {
-        flex-direction: row;
     }
 }
