@@ -83,43 +83,43 @@ nav a:hover {
 }
 
 .layer1 {
-    background-image: url("../src/layered-waves1.svg");
+    background-image: url("../img/layered-waves1.svg");
 }
 
 .layer2 {
-    background-image: url("../src/layered-waves2.svg");
+    background-image: url("../img/layered-waves2.svg");
 }
 
 .layer3 {
     aspect-ratio: 900/300;
-    background-image: url("../src/wave-haikei1.svg");
+    background-image: url("../img/wave-haikei1.svg");
 }
 
 .layer4 {
     aspect-ratio: 800/300;
-    background-image: url("../src/layered-peaks-haikei.svg");
+    background-image: url("../img/layered-peaks-haikei.svg");
 }
 
 .layer5 {
     aspect-ratio: 900/300;
 
-    background-image: url("../src/layered-waves-transition.svg");
+    background-image: url("../img/layered-waves-transition.svg");
 }
 
 .layer6 {
     aspect-ratio: 900/300;
 
-    background-image: url("../src/low-poly-grid-haikei.svg");
+    background-image: url("../img/low-poly-grid-haikei.svg");
 }
 
 .layer7 {
     aspect-ratio: 900/300;
-    background-image: url("../src/layered-waves-haikei.svg");
+    background-image: url("../img/layered-waves-haikei.svg");
 }
 
 .layer8 {
     aspect-ratio: 900/100;
-    background-image: url("../src/layered-waves-transition-oss.svg");
+    background-image: url("../img/layered-waves-transition-oss.svg");
 }
 
 h1,

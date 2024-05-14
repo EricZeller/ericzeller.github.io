@@ -6,11 +6,6 @@ const projects = [
         icon: "android.png"
     },
     {
-        name: "Jellyfin Media Player",
-        githubRepo: "jellyfin/jellyfin-media-player",
-        icon: "cross.png"
-    },
-    {
         name: "Randy in Flutter",
         githubRepo: "EricZeller/flutter_randy",
         icon: "cross.png"
