@@ -63,6 +63,7 @@ projects.forEach(project => {
                     repoLinkElement.target = '_blank';
                     projectElementLeft.appendChild(repoLinkElement);
 
+                    const emptyElement = document.createElement('p');
                     projectElementLeft.appendChild(emptyElement);
 
 
@@ -70,7 +71,6 @@ projects.forEach(project => {
                     iconElementGitHub.setAttribute('name', 'logo-github');
                     repoLinkElement.appendChild(iconElementGitHub);
 
-                    const emptyElement = document.createElement('p');
                     projectElementLeft.appendChild(emptyElement);
 
                     const latestReleaseLinkElement = document.createElement('a');
@@ -109,9 +109,9 @@ projects.forEach(project => {
 
                     projectContainer.appendChild(projectElement);
                 })
-                .catch(error => console.error('Fehler beim Abrufen des neuesten Releases:', error));
+                .catch(error => console.error('Failed to get newest release:', error));
         })
-        .catch(error => console.error('Failed to get repo informations', error));
+        .catch(error => console.error('Failed to get repo informations:', error));
 });
 
 function detectPlatform(contentType) {
