@@ -63,15 +63,16 @@ projects.forEach(project => {
                     repoLinkElement.target = '_blank';
                     projectElementLeft.appendChild(repoLinkElement);
 
-                    const emptyElement = document.createElement('p');
-                    projectElementLeft.appendChild(emptyElement);
+                    const emptyElement1 = document.createElement('p');
+                    projectElementLeft.appendChild(emptyElement1);
 
 
                     const iconElementGitHub = document.createElement('ion-icon');
                     iconElementGitHub.setAttribute('name', 'logo-github');
                     repoLinkElement.appendChild(iconElementGitHub);
 
-                    projectElementLeft.appendChild(emptyElement);
+                    const emptyElement2 = document.createElement('p');
+                    projectElementLeft.appendChild(emptyElement2);
 
                     const latestReleaseLinkElement = document.createElement('a');
                     latestReleaseLinkElement.textContent = 'Release overview ';
