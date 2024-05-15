@@ -34,31 +34,37 @@ projects.forEach(project => {
                     const projectElement = document.createElement('div');
                     projectElement.classList.add('project');
 
-                    const projectElementLeft = document.createElement('div');
-                    projectElementLeft.classList.add('project-left');
+                    const projectElementTop = document.createElement('div');
+                    projectElementTop.classList.add('project-top');
 
                     const titleElement = document.createElement('h2');
                     titleElement.textContent = projectName;
-                    projectElementLeft.appendChild(titleElement);
+                    projectElementTop.appendChild(titleElement);
+
+                    const projectIcon = document.createElement('img');
+                    projectIcon.src = `./icons/${project.icon}`;
+                    projectElementTop.appendChild(projectIcon);
+
+                    projectElement.appendChild(projectElementTop);
 
                     const descriptionElement = document.createElement('p');
                     descriptionElement.classList.add('description');
                     descriptionElement.textContent = description;
-                    projectElementLeft.appendChild(descriptionElement);
+                    projectElement.appendChild(descriptionElement);
 
                     const versionElement = document.createElement('p');
                     versionElement.classList.add('latest-version');
                     versionElement.textContent = `Current version: ${latestVersion}`;
-                    projectElementLeft.appendChild(versionElement);
+                    projectElement.appendChild(versionElement);
 
                     const repoLinkElement = document.createElement('a');
                     repoLinkElement.textContent = 'Repository ';
                     repoLinkElement.href = `https://github.com/${owner}/${repo}`;
                     repoLinkElement.target = '_blank';
-                    projectElementLeft.appendChild(repoLinkElement);
+                    projectElement.appendChild(repoLinkElement);
 
                     const emptyElement = document.createElement('p');
-                    projectElementLeft.appendChild(emptyElement);
+                    projectElement.appendChild(emptyElement);
 
                     const iconElementGitHub = document.createElement('ion-icon');
                     iconElementGitHub.setAttribute('name', 'logo-github');
@@ -68,10 +74,10 @@ projects.forEach(project => {
                     latestReleaseLinkElement.textContent = 'Release overview ';
                     latestReleaseLinkElement.href = latestReleaseLink;
                     latestReleaseLinkElement.target = '_blank';
-                    projectElementLeft.appendChild(latestReleaseLinkElement);
+                    projectElement.appendChild(latestReleaseLinkElement);
 
                     const emptyElement2 = document.createElement('p');
-                    projectElementLeft.appendChild(emptyElement2);
+                    projectElement.appendChild(emptyElement2);
 
                     const iconElementGitHub2 = document.createElement('ion-icon');
                     iconElementGitHub2.setAttribute('name', 'logo-github');
@@ -84,22 +90,16 @@ projects.forEach(project => {
                             downloadLinkElement.classList.add('download-link');
                             downloadLinkElement.textContent = `Download (${platform}) `;
                             downloadLinkElement.href = asset.browser_download_url;
-                            projectElementLeft.appendChild(downloadLinkElement);
+                            projectElement.appendChild(downloadLinkElement);
 
                             const iconElement = document.createElement('ion-icon');
                             iconElement.setAttribute('name', 'cloud-download');
                             downloadLinkElement.appendChild(iconElement);
 
                             const emptyElement = document.createElement('p');
-                            projectElementLeft.appendChild(emptyElement);
+                            projectElement.appendChild(emptyElement);
                         }
                     });
-
-                    projectElement.appendChild(projectElementLeft);
-
-                    const projectIcon = document.createElement('img');
-                    projectIcon.src = `./icons/${project.icon}`;
-                    projectElement.appendChild(projectIcon);
 
                     projectContainer.appendChild(projectElement);
                 })

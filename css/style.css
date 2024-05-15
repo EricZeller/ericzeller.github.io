@@ -386,20 +386,25 @@ header {
     background-color: #ffffff1e;
     border-radius: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 20px;
     transition: all 0.3s;
     column-gap: 30px;
     max-width: 95vw;
 }
 
-.project-left {
-    flex-direction: column;
+.project-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .project p,
-.project a {
+.project a,
+.project h2 {
+
     flex: 3;
+    margin: 6px;
 }
 
 .project img {
@@ -407,7 +412,7 @@ header {
     width: auto;
     display: block;
     max-height: 7vh;
-    min-height: 40px;
+    min-height: 3vw;
     background: #61616149;
     border-radius: 10px;
 }

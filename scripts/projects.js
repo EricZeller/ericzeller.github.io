@@ -87,8 +87,8 @@ projects.forEach(project => {
   const projectElement = document.createElement('div');
   projectElement.classList.add('project');
 
-  const projectElementLeft = document.createElement('div');
-  projectElementLeft.classList.add('project-left');
+  const projectElementTop = document.createElement('div');
+  projectElementTop.classList.add('project-top');
 
   const projectTitleLink = document.createElement('a');
   projectTitleLink.href = githubLink;
@@ -100,16 +100,15 @@ projects.forEach(project => {
   const projectDescription = document.createElement('p');
   projectDescription.innerHTML = project.description;
 
-  projectElementLeft.appendChild(projectTitleLink);
-  projectElementLeft.appendChild(projectLanguages);
-  projectElementLeft.appendChild(projectDescription);
-
-  projectElement.appendChild(projectElementLeft);
-
-
+  projectElementTop.appendChild(projectTitleLink);
   const projectLogo = document.createElement('img');
   projectLogo.src = `../icons/${project.logo}`;
-  projectElement.appendChild(projectLogo);
+  projectElementTop.appendChild(projectLogo);
+
+  projectElement.appendChild(projectElementTop);
+
+  projectElement.appendChild(projectLanguages);
+  projectElement.appendChild(projectDescription);
 
   projectContainer.appendChild(projectElement);
 })
