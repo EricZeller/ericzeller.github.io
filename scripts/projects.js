@@ -44,6 +44,9 @@ const projects = [
     githubRepo: "EricZeller/Coding-Camp-2022",
     languages: "Vue, JavaScript, HTML",
     description: "Sybit Coding Camp from 2022, where we made a web app built with Vue.js, for a leisure activity program",
+    links: [
+      { text: 'Original repository from Sybit', url: 'https://github.com/Sybit-Education/Coding-Camp-2022' }
+    ],
     logo: "vue.png"
   },
   {
