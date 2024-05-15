@@ -6,6 +6,10 @@ const projects = [
     githubRepo: "EricZeller/flutter_randy",
     languages: "Dart, Flutter as framework",
     description: "Same principle as Randy, written with the Flutter framework for more devices instead of only Android with Kotlin",
+    links: [
+      { text: 'Go to downdloads', url: '../downloads' },
+      { text: 'Feedback', url: 'https://example.com/feedback1' }
+    ],
     logo: "flutter.png"
   },
   {
@@ -29,6 +33,48 @@ const projects = [
     description: "Towers of Hanoi algorithm, with variable number of plates and visual states of the progress on the terminal",
     logo: "java.png"
   },
+  {
+    name: "Coding Camp 2022",
+    githubRepo: "EricZeller/Coding-Camp-2022",
+    languages: "Vue, JavaScript, HTML",
+    description: "Sybit Coding Camp from 2022, where we made a web app built with Vue.js, for a leisure activity program",
+    logo: "vue.png"
+  },
+  {
+    name: "k-Means algorithm",
+    githubRepo: "EricZeller/python-kmeans",
+    languages: "Python",
+    description: "A algorithm with libraries in Python for a k-Means clustering",
+    logo: "python.png"
+  },
+  {
+    name: "Serial clock for Nucleo",
+    githubRepo: "EricZeller/serialPythonUSBClock",
+    languages: "C++, Python",
+    description: "A mbed program in C++ for a Nucleo with a 7-segment display for showing the current time, updated via a Python script over serial USB",
+    logo: "cpp.png"
+  },
+  {
+    name: "This website",
+    githubRepo: "EricZeller/ericzeller.github.io",
+    languages: "JavaScript, CSS, HTML",
+    description: "Personal portfolio website with responsive design and API calls from the GitHub API",
+    logo: "html.png"
+  },
+  {
+    name: "Tic Tac Toe",
+    githubRepo: "EricZeller/tictactoe",
+    languages: "JavaScript, CSS, HTML",
+    description: "A Tic Tac Toe game in the browser for two players, written JavaScript",
+    logo: "javascript.png"
+  },
+  {
+    name: "Rock Paper Scissor",
+    githubRepo: "EricZeller/rockpaperscissor",
+    languages: "JavaScript, CSS, HTML",
+    description: "A Rock Paper Scissor game, also in the browser written in JavaScript against a random bot",
+    logo: "javascript.png"
+  },
   // projects to add here
 ];
 
@@ -37,7 +83,7 @@ const projectContainer = document.querySelector('.projectcontainer');
 
 projects.forEach(project => {
   const githubLink = `https://github.com/${project.githubRepo}`;
-  
+
   const projectElement = document.createElement('div');
   projectElement.classList.add('project');
 
@@ -52,7 +98,7 @@ projects.forEach(project => {
   projectLanguages.textContent = `Languages: ${project.languages}`;
 
   const projectDescription = document.createElement('p');
-  projectDescription.textContent = project.description;
+  projectDescription.innerHTML = project.description;
 
   projectElementLeft.appendChild(projectTitleLink);
   projectElementLeft.appendChild(projectLanguages);
