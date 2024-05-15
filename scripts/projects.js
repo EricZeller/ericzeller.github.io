@@ -29,6 +29,13 @@ const projects = [
     description: "Towers of Hanoi algorithm, with variable number of plates and visual states of the progress on the terminal",
     logo: "java.png"
   },
+  {
+    name: "Coding Camp 2022",
+    githubRepo: "EricZeller/Coding-Camp-2022",
+    languages: "Vue, JavaScript, HTML",
+    description: "Sybit Coding Camp from 2022, where we made a web app built with Vue.js, for a leisure activity program",
+    logo: "vue.png"
+  },
   // projects to add here
 ];
 
