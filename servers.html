@@ -12,6 +12,15 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" href="./img/logo_z_gradient_nobackground.png">
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        @media (min-width: 700px) {
+            .projectcontainer {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -38,8 +47,18 @@
 
     </header>
 
-    <section class="hidden">
-        <h1>In progress.</h1>
+    <section>
+        <h1 class="hidden">Server.</h1>
+
+        <div class="projectcontainer">
+            <div class="project">
+                <div class="left">
+                    <h2>Pi-hole</h2>
+                    <p>Black holing local DNS server for blocking ads and malware over the entire network</p>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <div class="spacer layer4"></div>
