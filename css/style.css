@@ -397,14 +397,19 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 7px;
 }
 
 .project p,
 .project a,
 .project h2 {
-
     flex: 3;
-    margin: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.project a h2 {
+    margin: 0px;
 }
 
 .project img {
@@ -415,6 +420,7 @@ header {
     min-height: 3vw;
     background: #61616149;
     border-radius: 10px;
+    margin-left: 7px;
 }
 
 @media (min-width: 700px) {

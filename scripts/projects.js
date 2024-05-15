@@ -7,8 +7,8 @@ const projects = [
     languages: "Dart, Flutter as framework",
     description: "Same principle as Randy, written with the Flutter framework for more devices instead of only Android with Kotlin",
     links: [
-      { text: 'Go to downdloads', url: '../downloads' },
-      { text: 'Feedback', url: 'https://example.com/feedback1' }
+      { text: 'Go to downloads', url: '../downloads.html' },
+      { text: 'Flutter framework', url: 'https://flutter.dev/' }
     ],
     logo: "flutter.png"
   },
@@ -17,6 +17,9 @@ const projects = [
     githubRepo: "EricZeller/randy",
     languages: "Kotlin",
     description: "Simple random number generator, written in Kotlin for Android",
+    links: [
+      { text: 'Go to downloads', url: '../downloads.html' }
+    ],
     logo: "kotlin.png"
   },
   {
@@ -24,6 +27,9 @@ const projects = [
     githubRepo: "EricZeller/snake",
     languages: "JavaScript, HTML",
     description: "Snake game with keyboard and touch controls, written in JavaScript",
+    links: [
+      { text: 'Play it', url: 'https://ericzeller.github.io/snake' }
+    ],
     logo: "javascript.png"
   },
   {
@@ -66,6 +72,9 @@ const projects = [
     githubRepo: "EricZeller/tictactoe",
     languages: "JavaScript, CSS, HTML",
     description: "A Tic Tac Toe game in the browser for two players, written JavaScript",
+    links: [
+      { text: 'Play it', url: 'https://ericzeller.github.io/tictactoe' }
+    ],
     logo: "javascript.png"
   },
   {
@@ -73,6 +82,9 @@ const projects = [
     githubRepo: "EricZeller/rockpaperscissor",
     languages: "JavaScript, CSS, HTML",
     description: "A Rock Paper Scissor game, also in the browser written in JavaScript against a random bot",
+    links: [
+      { text: 'Play it', url: 'https://ericzeller.github.io/rockpaperscissor' }
+    ],
     logo: "javascript.png"
   },
   // projects to add here
@@ -106,6 +118,17 @@ projects.forEach(project => {
   projectElementTop.appendChild(projectLogo);
 
   projectElement.appendChild(projectElementTop);
+
+
+  if (project.links) {
+    project.links.forEach(link => {
+      const additionalLinkElement = document.createElement('a');
+      additionalLinkElement.textContent = `${link.text} `;
+      additionalLinkElement.href = link.url;
+      additionalLinkElement.target = '_blank';
+      projectElement.appendChild(additionalLinkElement);
+    });
+  }
 
   projectElement.appendChild(projectLanguages);
   projectElement.appendChild(projectDescription);
