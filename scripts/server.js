@@ -66,11 +66,6 @@ server.forEach(server => {
 
     serverElement.appendChild(descriptionElement);
 
-    const statusElement = document.createElement('p');
-
-    statusElement.textContent = "Status: ";
-
-    checkServerStatus(server.link);
     serverContainer.appendChild(serverElement);
 })
 
