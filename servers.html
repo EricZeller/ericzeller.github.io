@@ -19,6 +19,10 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+        .project-top a {
+            margin: 0;
+            flex: 1;
+        }
     </style>
 
 </head>
@@ -50,14 +54,7 @@
     <section>
         <h1 class="hidden">Server.</h1>
 
-        <div class="projectcontainer">
-            <div class="project">
-                <div class="left">
-                    <h2>Pi-hole</h2>
-                    <p>Black holing local DNS server for blocking ads and malware over the entire network</p>
-                </div>
-            </div>
-        </div>
+        <div class="projectcontainer"></div>
 
     </section>
 
@@ -70,6 +67,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/server.js"></script>
 </body>
 
 </html>
