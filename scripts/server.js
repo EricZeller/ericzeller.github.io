@@ -51,6 +51,7 @@ server.forEach(server => {
 
     const iconLink = document.createElement('a');
     iconLink.href = server.link;
+    iconLink.target = "_blank";
     const iconImg = document.createElement('img');
     iconImg.src = `../icons/${server.icon}`;
     iconImg.alt = "server icon";
