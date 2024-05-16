@@ -390,7 +390,6 @@ header {
     padding: 20px;
     transition: all 0.3s;
     column-gap: 30px;
-    max-width: 95vw;
 }
 
 .project-top {
@@ -426,7 +425,7 @@ header {
 @media (min-width: 700px) {
     .projectcontainer {
         grid-template-columns: repeat(2, 1fr);
-        width: 90vw;
+        width: 80vw;
         max-width: 1100px;
     }
 
