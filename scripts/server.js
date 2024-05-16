@@ -60,11 +60,35 @@ server.forEach(server => {
     titleElement.appendChild(iconLink);
 
     serverElement.appendChild(titleElement);
-    
+
     const descriptionElement = document.createElement('p');
     descriptionElement.textContent = server.description;
 
     serverElement.appendChild(descriptionElement);
 
+    const statusElement = document.createElement('p');
+
+    statusElement.textContent = "Status: ";
+
+    checkServerStatus(server.link);
     serverContainer.appendChild(serverElement);
 })
+
+
+
+async function checkServerStatus(url) {
+    try {
+        const response = await fetch(url, { method: 'HEAD' });
+
+        if (response.ok) {
+            console.log(`${url} answered correctly: ${response.status}`);
+            return true;
+        } else {
+            console.log(`${url} didn't answer correctly: ${response.status}`);
+            return false;
+        }
+    } catch (error) {
+        console.log(`${url} request failed: ${response.status}`);
+        return false;
+    }
+}
