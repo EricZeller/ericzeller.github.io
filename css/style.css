@@ -259,8 +259,7 @@ header {
     }
 
     .image {
-        width: 80vw;
-        max-width: 250px;
+        width: 90vw;
     }
 
     .right {
