@@ -51,6 +51,7 @@ server.forEach(server => {
 
     const iconLink = document.createElement('a');
     iconLink.href = server.link;
+    iconLink.target = "_blank";
     const iconImg = document.createElement('img');
     iconImg.src = `../icons/${server.icon}`;
     iconImg.alt = "server icon";
@@ -60,7 +61,7 @@ server.forEach(server => {
     titleElement.appendChild(iconLink);
 
     serverElement.appendChild(titleElement);
-    
+
     const descriptionElement = document.createElement('p');
     descriptionElement.textContent = server.description;
 
@@ -68,3 +69,22 @@ server.forEach(server => {
 
     serverContainer.appendChild(serverElement);
 })
+
+
+
+async function checkServerStatus(url) {
+    try {
+        const response = await fetch(url, { method: 'HEAD' });
+
+        if (response.ok) {
+            console.log(`${url} answered correctly: ${response.status}`);
+            return true;
+        } else {
+            console.log(`${url} didn't answer correctly: ${response.status}`);
+            return false;
+        }
+    } catch (error) {
+        console.log(`${url} request failed: ${response.status}`);
+        return false;
+    }
+}

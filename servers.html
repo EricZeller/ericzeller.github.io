@@ -19,9 +19,29 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
         .project-top a {
             margin: 0;
             flex: 1;
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .dot {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.green {
+            background-color: green;
+        }
+
+        .dot.red {
+            background-color: red;
         }
     </style>
 

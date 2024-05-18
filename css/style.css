@@ -379,7 +379,7 @@ header {
     margin: 0 auto;
     padding: 20px;
     display: grid;
-    grid-gap: 40px;
+    grid-gap: 25px;
 }
 
 .project {
@@ -427,6 +427,7 @@ header {
         grid-template-columns: repeat(2, 1fr);
         width: 80vw;
         max-width: 1100px;
+        grid-gap: 35px;
     }
 
     .project:hover {
