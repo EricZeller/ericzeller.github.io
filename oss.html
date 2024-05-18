@@ -12,6 +12,18 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" href="./img/logo_z_gradient_nobackground.png">
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        #slideshow-image {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        #slideshow-image.present {
+            opacity: 1;
+        }
+    </style>
+
 </head>
 
 
@@ -52,7 +64,7 @@
                     environment, Pop!OS and Linux Mint.</p>
                 <p>Currently I am on the Gnome desktop environment on Arch, but I also had i3 and XFCE in usage.</p>
                 <p>In a virtual machine I had macOS Ventura and/or Sonoma once installed on Linux via Quickemu for
-                    programming with Xcode.</p>
+                    programming or compliling with Xcode.</p>
 
                 <ul style="padding-left: 4vw;">
                     <strong>
@@ -66,7 +78,7 @@
             </div>
 
             <div class="right">
-                <img src="./img/Screenshot from 2024-05-14 21-45-29.png" class="image" alt="screenshot">
+                <img src="./img/screenshot_mac.png" class="image" id="slideshow-image" alt="screenshot" width="40vw">
             </div>
         </div>
     </section>
@@ -126,6 +138,35 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./scripts/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = ['img/screenshot_arch.png', 'img/screenshot_mac.png', 'img/screenshot_windows.png'];
+            let currentIndex = 0;
+            const imageElement = document.getElementById('slideshow-image');
+
+            function changeImage() {
+                imageElement.classList.remove('present');
+
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imageElement.src = images[currentIndex];
+                    imageElement.classList.add('present');
+                }, 1000);
+            }
+
+            // Initial das erste Bild anzeigen
+            imageElement.src = images[currentIndex];
+            imageElement.classList.add('present');
+
+            // Bild alle 3s wechseln
+            setInterval(changeImage, 5000);
+
+            imageElement.addEventListener('click', () => {
+                window.open(imageElement.src, '_blank');
+            });
+        });
+    </script>
 </body>
 
 </html>
