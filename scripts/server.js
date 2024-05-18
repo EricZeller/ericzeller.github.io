@@ -75,8 +75,11 @@ server.forEach(server => {
 
 
 async function checkServerStatus(url) {
+
+    const targetUrl = 'https://corsproxy.io/?' + encodeURIComponent(url);
+
     try {
-        const response = await fetch(url, { method: 'HEAD' });
+        const response = await fetch(targetUrl, { method: 'HEAD' });
 
         if (response.ok) {
             console.log(`${url} answered correctly: ${response.status}`);
