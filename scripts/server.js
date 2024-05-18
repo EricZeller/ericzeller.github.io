@@ -67,6 +67,8 @@ server.forEach(server => {
 
     serverElement.appendChild(descriptionElement);
 
+    checkServerStatus(server.link);
+
     serverContainer.appendChild(serverElement);
 })
 
