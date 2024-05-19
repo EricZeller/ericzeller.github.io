@@ -27,6 +27,7 @@ projects.forEach(project => {
             fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`)
                 .then(response => response.json())
                 .then(latestRelease => {
+                    console.log(latestRelease)
                     const projectName = project.name;
                     const latestVersion = latestRelease.tag_name;
                     const latestReleaseLink = latestRelease.html_url;
@@ -84,7 +85,7 @@ projects.forEach(project => {
                     latestReleaseLinkElement.appendChild(iconElementGitHub2);
 
                     latestRelease.assets.forEach(asset => {
-                        const platform = detectPlatform(asset.content_type);
+                        const platform = detectPlatform(asset.name);
                         if (platform) {
                             const downloadLinkElement = document.createElement('a');
                             downloadLinkElement.classList.add('download-link');
@@ -108,17 +109,16 @@ projects.forEach(project => {
         .catch(error => console.error('Failed to get repo informations', error));
 });
 
-function detectPlatform(contentType) {
-    switch (contentType) {
-        case "application/vnd.android.package-archive":
-            return "Android";
-        case "application/x-ms-dos-executable":
-            return "Windows";
-        case "application/x-diskcopy":
-            return "macOS";
-        case "application/vnd.debian.binary-package":
-            return "Linux";
-        default:
-            return null;
+function detectPlatform(assetName) {
+    if (assetName.endsWith(".apk")) {
+        return "Android";
+    } else if (assetName.endsWith(".zip")) {
+        return "Windows";
+    } else if (assetName.endsWith(".dmg")) {
+        return "macOS";
+    } else if (assetName.endsWith(".deb")) {
+        return "Linux";
     }
+    // Füge weitere Plattformen hinzu, wenn nötig
+    return null;
 }
