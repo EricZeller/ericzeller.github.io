@@ -98,6 +98,8 @@ projects.forEach(project => {
                                 platform = "apple";
                             } else if (platform == "Linux") { 
                                 platform = "tux";
+                            } else if (platform == "Windows .zip" || platform == "Windows .exe") { 
+                                platform = "windows";
                             }
                             iconElement.setAttribute('name', `logo-${platform.toLowerCase()}`);
                             downloadLinkElement.appendChild(iconElement);
@@ -118,13 +120,13 @@ function detectPlatform(assetName) {
     if (assetName.endsWith(".apk")) {
         return "Android";
     } else if (assetName.endsWith(".zip")) {
-        return "Windows (.zip)";
+        return "Windows .zip";
     } else if (assetName.endsWith(".dmg")) {
         return "macOS";
     } else if (assetName.endsWith(".deb")) {
         return "Linux";
     } else if (assetName.endsWith(".exe")) {
-        return "Windows (.exe)";
+        return "Windows .exe";
     }
     // Füge weitere Plattformen hinzu, wenn nötig
     return null;
