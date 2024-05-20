@@ -85,7 +85,7 @@ projects.forEach(project => {
                     latestReleaseLinkElement.appendChild(iconElementGitHub2);
 
                     latestRelease.assets.forEach(asset => {
-                        const platform = detectPlatform(asset.name);
+                        var platform = detectPlatform(asset.name);
                         if (platform) {
                             const downloadLinkElement = document.createElement('a');
                             downloadLinkElement.classList.add('download-link');
@@ -94,7 +94,12 @@ projects.forEach(project => {
                             projectElement.appendChild(downloadLinkElement);
 
                             const iconElement = document.createElement('ion-icon');
-                            iconElement.setAttribute('name', 'cloud-download');
+                            if (platform == "macOS") {
+                                platform = "apple";
+                            } else if (platform == "Linux") { 
+                                platform = "tux";
+                            }
+                            iconElement.setAttribute('name', `logo-${platform.toLowerCase()}`);
                             downloadLinkElement.appendChild(iconElement);
 
                             const emptyElement = document.createElement('p');
