@@ -118,11 +118,13 @@ function detectPlatform(assetName) {
     if (assetName.endsWith(".apk")) {
         return "Android";
     } else if (assetName.endsWith(".zip")) {
-        return "Windows";
+        return "Windows (.zip)";
     } else if (assetName.endsWith(".dmg")) {
         return "macOS";
     } else if (assetName.endsWith(".deb")) {
         return "Linux";
+    } else if (assetName.endsWith(".exe")) {
+        return "Windows (.exe)";
     }
     // Füge weitere Plattformen hinzu, wenn nötig
     return null;
