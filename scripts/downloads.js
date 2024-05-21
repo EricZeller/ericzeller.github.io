@@ -8,7 +8,7 @@ const projects = [
     {
         name: "Randy in Flutter",
         githubRepo: "EricZeller/flutter_randy",
-        icon: "cross.png"
+        icon: "flutter.png"
     },
     // projects to add here
 ];
