@@ -123,7 +123,7 @@ function detectPlatform(assetName) {
         return "Windows .zip";
     } else if (assetName.endsWith(".dmg")) {
         return "macOS";
-    } else if (assetName.endsWith(".deb")) {
+    } else if (assetName.endsWith(".tar.xz")) {
         return "Linux";
     } else if (assetName.endsWith(".exe")) {
         return "Windows .exe";
