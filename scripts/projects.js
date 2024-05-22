@@ -5,7 +5,7 @@ const projects = [
     name: "Randy in Flutter",
     githubRepo: "EricZeller/flutter_randy",
     languages: "Dart, Flutter as framework",
-    description: "Same principle as Randy, written with the Flutter framework for more devices instead of only Android with Kotlin",
+    description: "Same principle as Randy, written with the Flutter framework for more devices instead of only Android with Kotlin, Material You design integrated and currently working on Android 12 and later and Windows",
     links: [
       { text: 'Go to downloads', url: '../downloads.html' },
       { text: 'Flutter framework', url: 'https://flutter.dev/' }
