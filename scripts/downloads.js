@@ -94,13 +94,13 @@ projects.forEach(project => {
                             projectElement.appendChild(downloadLinkElement);
 
                             const iconElement = document.createElement('ion-icon');
-                            if (assetName.endsWith(".apk")) {
+                            if (asset.name.endsWith(".apk")) {
                                 platform = "android";
-                            } else if (assetName.endsWith(".zip") || assetName.endsWith(".exe")) { 
+                            } else if (asset.name.endsWith(".zip") || asset.name.endsWith(".exe")) { 
                                 platform = "windows";
-                            } else if (assetName.endsWith(".dmg")) { 
+                            } else if (asset.name.endsWith(".dmg")) { 
                                 platform = "apple";
-                            } else if (assetName.endsWith(".tar.xz")){
+                            } else if (asset.name.endsWith(".tar.xz")){
                                 platform = "tux";
                             }
                             iconElement.setAttribute('name', `logo-${platform.toLowerCase()}`);
