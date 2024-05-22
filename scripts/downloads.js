@@ -89,17 +89,19 @@ projects.forEach(project => {
                         if (platform) {
                             const downloadLinkElement = document.createElement('a');
                             downloadLinkElement.classList.add('download-link');
-                            downloadLinkElement.textContent = `Download (${platform}) `;
+                            downloadLinkElement.textContent = `Download for ${platform} `;
                             downloadLinkElement.href = asset.browser_download_url;
                             projectElement.appendChild(downloadLinkElement);
 
                             const iconElement = document.createElement('ion-icon');
-                            if (platform == "macOS") {
-                                platform = "apple";
-                            } else if (platform == "Linux") { 
-                                platform = "tux";
-                            } else if (platform == "Windows .zip" || platform == "Windows .exe") { 
+                            if (assetName.endsWith(".apk")) {
+                                platform = "android";
+                            } else if (assetName.endsWith(".zip") || assetName.endsWith(".exe")) { 
                                 platform = "windows";
+                            } else if (assetName.endsWith(".dmg")) { 
+                                platform = "apple";
+                            } else if (assetName.endsWith(".tar.xz")){
+                                platform = "tux";
                             }
                             iconElement.setAttribute('name', `logo-${platform.toLowerCase()}`);
                             downloadLinkElement.appendChild(iconElement);
@@ -118,15 +120,15 @@ projects.forEach(project => {
 
 function detectPlatform(assetName) {
     if (assetName.endsWith(".apk")) {
-        return "Android";
+        return "Android (.apk)";
     } else if (assetName.endsWith(".zip")) {
-        return "Windows .zip";
+        return "Windows (.zip)";
     } else if (assetName.endsWith(".dmg")) {
-        return "macOS";
+        return "macOS (.dmg)";
     } else if (assetName.endsWith(".tar.xz")) {
-        return "Linux";
+        return "Linux (.tar.xz)";
     } else if (assetName.endsWith(".exe")) {
-        return "Windows .exe";
+        return "Windows (.exe)";
     }
     // Füge weitere Plattformen hinzu, wenn nötig
     return null;
