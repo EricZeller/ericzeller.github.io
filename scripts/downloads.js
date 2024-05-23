@@ -1,14 +1,14 @@
 
 const projects = [
     {
-        name: "Randy",
-        githubRepo: "EricZeller/randy",
-        icon: "android.png"
-    },
-    {
         name: "Randy in Flutter",
         githubRepo: "EricZeller/flutter_randy",
         icon: "flutter.png"
+    },
+    {
+        name: "Randy",
+        githubRepo: "EricZeller/randy",
+        icon: "android.png"
     },
     // projects to add here
 ];
@@ -55,7 +55,11 @@ projects.forEach(project => {
 
                     const versionElement = document.createElement('p');
                     versionElement.classList.add('latest-version');
-                    versionElement.textContent = `Current version: ${latestVersion}`;
+                    const staticText = document.createTextNode('Current version: ');
+                    const strongElement = document.createElement('strong');
+                    strongElement.textContent = latestVersion;
+                    versionElement.appendChild(staticText);
+                    versionElement.appendChild(strongElement);
                     projectElement.appendChild(versionElement);
 
                     const repoLinkElement = document.createElement('a');
@@ -96,11 +100,11 @@ projects.forEach(project => {
                             const iconElement = document.createElement('ion-icon');
                             if (asset.name.endsWith(".apk")) {
                                 platform = "android";
-                            } else if (asset.name.endsWith(".zip") || asset.name.endsWith(".exe")) { 
+                            } else if (asset.name.endsWith(".zip") || asset.name.endsWith(".exe")) {
                                 platform = "windows";
-                            } else if (asset.name.endsWith(".dmg")) { 
+                            } else if (asset.name.endsWith(".dmg")) {
                                 platform = "apple";
-                            } else if (asset.name.endsWith(".tar.xz")){
+                            } else if (asset.name.endsWith(".tar.xz")) {
                                 platform = "tux";
                             }
                             iconElement.setAttribute('name', `logo-${platform.toLowerCase()}`);

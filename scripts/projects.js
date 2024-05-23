@@ -9,7 +9,6 @@ const projects = [
     links: [
       { text: 'Try it out on the web', url: 'https://ericzeller.github.io/flutter_randy_web/' },
       { text: 'Go to downloads', url: '../downloads.html' },
-      { text: 'Flutter framework', url: 'https://flutter.dev/' }
     ],
     logo: "flutter.png"
   },
