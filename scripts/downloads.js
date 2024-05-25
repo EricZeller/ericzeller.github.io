@@ -1,7 +1,7 @@
 
 const projects = [
     {
-        name: "Randy in Flutter",
+        name: "Randy v2",
         githubRepo: "EricZeller/flutter_randy",
         icon: "flutter.png"
     },
