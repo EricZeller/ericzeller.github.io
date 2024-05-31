@@ -1,6 +1,11 @@
 
 const projects = [
     {
+        name: "World Clock v2",
+        githubRepo: "EricZeller/flutter-world-clock-v2",
+        icon: "flutter.png"
+    },
+    {
         name: "Randy v2",
         githubRepo: "EricZeller/flutter_randy",
         icon: "flutter.png"

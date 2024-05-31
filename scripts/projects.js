@@ -2,6 +2,17 @@
 
 const projects = [
   {
+    name: "World Clock v2",
+    githubRepo: "EricZeller/flutter-world-clock-v2",
+    languages: "Dart, Flutter as framework",
+    description: "Flutter app that displays the current time and weather for various cities. With Material 3 support like Randy v2",
+    links: [
+      { text: 'Try it out on the web', url: ' ericzeller.github.io/world-clock-v2-web/' },
+      { text: 'Go to downloads', url: '../downloads.html' },
+    ],
+    logo: "flutter.png"
+  },
+  {
     name: "Randy v2",
     githubRepo: "EricZeller/flutter_randy",
     languages: "Dart, Flutter as framework",
