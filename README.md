@@ -2,14 +2,8 @@
 
 Personal site
 
+## Sources
 
-### To-Do
+All images are made by myself, either screenshots from my OS or the logos made in Photoshop.
 
-
-Projects page: add logo/icon
-
-Server: available status
-
-Mobile menu: different background, animation -> in JS?
-
-Add GitHub link
+Icons by ion-icons, see also on the [about](https://ericzeller.github.io/about.html) page.
