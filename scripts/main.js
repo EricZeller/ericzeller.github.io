@@ -36,4 +36,4 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 
 var currentYear = new Date().getFullYear();
-document.getElementById("copyright").innerHTML = '<a href="https://github.com/EricZeller" target="_blank"><ion-icon name="logo-github"></ion-icon>  </a>' + '<a href="https://gitlab.com/EricZeller" target="_blank"><ion-icon name="logo-gitlab"></ion-icon>  </a>' + '<a href="https://github.com/EricZeller/" target="_blank"><ion-icon name="logo-google-playstore"></ion-icon></a>' + "<br>" + "&#169; " + currentYear + ", all rights reserved.";
+document.getElementById("copyright").innerHTML = '<a href="https://github.com/EricZeller" target="_blank"><ion-icon name="logo-github"></ion-icon>  </a>' + '<a href="https://gitlab.com/EricZeller" target="_blank"><ion-icon name="logo-gitlab"></ion-icon>  </a>' + '<a href="https://apt.izzysoft.de/fdroid/?author=Eric+Zeller" target="_blank"><ion-icon name="logo-android"></ion-icon></a>' + "<br>" + "&#169; " + currentYear + ", all rights reserved.";

@@ -3,7 +3,10 @@ const projects = [
     {
         name: "World Clock v2",
         githubRepo: "EricZeller/flutter-world-clock-v2",
-        icon: "flutter.png"
+        icon: "flutter.png",
+        links: [
+            { image: '../img/IzzyOnDroidButton_nofont.svg', url: 'https://apt.izzysoft.de/fdroid/index/apk/de.ericz.worldclockv2/' },
+        ],
     },
     {
         name: "Randy v2",
@@ -52,6 +55,22 @@ projects.forEach(project => {
                     projectElementTop.appendChild(projectIcon);
 
                     projectElement.appendChild(projectElementTop);
+
+                    if (project.links) {
+                        project.links.forEach(link => {
+                          const additionalLinkElement = document.createElement('a');
+                          const storeImg = document.createElement('img');
+                          storeImg.style.width = '150px';
+                          storeImg.style.background = 'none';
+                          storeImg.style.borderRadius = '0px';
+                          storeImg.style.marginTop = '0px';
+                          storeImg.src = './img/IzzyOnDroidButton_nofont.svg';
+                          additionalLinkElement.appendChild(storeImg);
+                          additionalLinkElement.href = link.url;
+                          additionalLinkElement.target = '_blank';
+                          projectElement.appendChild(additionalLinkElement);
+                        });
+                      }
 
                     const descriptionElement = document.createElement('p');
                     descriptionElement.classList.add('description');
