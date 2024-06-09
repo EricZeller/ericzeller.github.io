@@ -53,7 +53,7 @@ server.forEach(server => {
     iconLink.href = server.link;
     iconLink.target = "_blank";
     const iconImg = document.createElement('img');
-    iconImg.src = `../icons/${server.icon}`;
+    iconImg.src = `./icons/${server.icon}`;
     iconImg.alt = "server icon";
     iconLink.appendChild(iconImg);
 
@@ -67,29 +67,5 @@ server.forEach(server => {
 
     serverElement.appendChild(descriptionElement);
 
-    checkServerStatus(server.link);
-
     serverContainer.appendChild(serverElement);
 })
-
-
-
-async function checkServerStatus(url) {
-
-    const targetUrl = 'https://corsproxy.io/?' + encodeURIComponent(url);
-
-    try {
-        const response = await fetch(targetUrl, { method: 'HEAD' });
-
-        if (response.ok) {
-            console.log(`${url} answered correctly: ${response.status}`);
-            return true;
-        } else {
-            console.log(`${url} didn't answer correctly: ${response.status}`);
-            return false;
-        }
-    } catch (error) {
-        console.log(`${url} request failed: ${response.status}`);
-        return false;
-    }
-}

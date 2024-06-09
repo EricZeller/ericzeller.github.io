@@ -5,7 +5,7 @@ const projects = [
         githubRepo: "EricZeller/flutter-world-clock-v2",
         icon: "flutter.png",
         links: [
-            { image: '../img/IzzyOnDroidButton_nofont.svg', url: 'https://apt.izzysoft.de/fdroid/index/apk/de.ericz.worldclockv2/' },
+            { image: './img/IzzyOnDroidButton_nofont.svg', url: 'https://apt.izzysoft.de/fdroid/index/apk/de.ericz.worldclockv2/' },
         ],
     },
     {

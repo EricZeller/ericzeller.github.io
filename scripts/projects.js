@@ -8,7 +8,7 @@ const projects = [
     description: "Flutter app that displays the current time and weather for various cities. With Material 3 support like Randy v2",
     links: [
       { text: 'Try it out on the web', url: 'https://ericzeller.github.io/world-clock-v2-web/' },
-      { text: 'Go to downloads', url: '../downloads.html' },
+      { text: 'Go to downloads', url: './downloads.html' },
     ],
     logo: "flutter.png"
   },
@@ -19,7 +19,7 @@ const projects = [
     description: "Same principle as Randy, written with the Flutter framework for more devices instead of only Android with Kotlin, Material You design integrated and currently working on Android 12 and later and Windows",
     links: [
       { text: 'Try it out on the web', url: 'https://ericzeller.github.io/flutter_randy_web/' },
-      { text: 'Go to downloads', url: '../downloads.html' },
+      { text: 'Go to downloads', url: './downloads.html' },
     ],
     logo: "flutter.png"
   },
@@ -29,7 +29,7 @@ const projects = [
     languages: "Kotlin",
     description: "Simple random number generator, written in Kotlin for Android",
     links: [
-      { text: 'Go to downloads', url: '../downloads.html' }
+      { text: 'Go to downloads', url: './downloads.html' }
     ],
     logo: "kotlin.png"
   },
@@ -128,7 +128,7 @@ projects.forEach(project => {
 
   projectElementTop.appendChild(projectTitleLink);
   const projectLogo = document.createElement('img');
-  projectLogo.src = `../icons/${project.logo}`;
+  projectLogo.src = `./icons/${project.logo}`;
   projectElementTop.appendChild(projectLogo);
 
   projectElement.appendChild(projectElementTop);
