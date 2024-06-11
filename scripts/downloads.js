@@ -1,4 +1,3 @@
-
 const projects = [
     {
         name: "World Clock v2",
@@ -40,111 +39,127 @@ projects.forEach(project => {
                     const latestVersion = latestRelease.tag_name;
                     const latestReleaseLink = latestRelease.html_url;
 
-                    const projectElement = document.createElement('div');
-                    projectElement.classList.add('project');
-
-                    const projectElementTop = document.createElement('div');
-                    projectElementTop.classList.add('project-top');
-
-                    const titleElement = document.createElement('h2');
-                    titleElement.textContent = projectName;
-                    projectElementTop.appendChild(titleElement);
-
-                    const projectIcon = document.createElement('img');
-                    projectIcon.src = `./icons/${project.icon}`;
-                    projectElementTop.appendChild(projectIcon);
-
-                    projectElement.appendChild(projectElementTop);
-
-                    if (project.links) {
-                        project.links.forEach(link => {
-                          const additionalLinkElement = document.createElement('a');
-                          const storeImg = document.createElement('img');
-                          storeImg.style.width = '150px';
-                          storeImg.style.background = 'none';
-                          storeImg.style.borderRadius = '0px';
-                          storeImg.style.marginTop = '0px';
-                          storeImg.src = './img/IzzyOnDroidButton_nofont.svg';
-                          additionalLinkElement.appendChild(storeImg);
-                          additionalLinkElement.href = link.url;
-                          additionalLinkElement.target = '_blank';
-                          projectElement.appendChild(additionalLinkElement);
-                        });
-                      }
-
-                    const descriptionElement = document.createElement('p');
-                    descriptionElement.classList.add('description');
-                    descriptionElement.textContent = description;
-                    projectElement.appendChild(descriptionElement);
-
-                    const versionElement = document.createElement('p');
-                    versionElement.classList.add('latest-version');
-                    const staticText = document.createTextNode('Current version: ');
-                    const strongElement = document.createElement('strong');
-                    strongElement.textContent = latestVersion;
-                    versionElement.appendChild(staticText);
-                    versionElement.appendChild(strongElement);
-                    projectElement.appendChild(versionElement);
-
-                    const repoLinkElement = document.createElement('a');
-                    repoLinkElement.textContent = 'Repository ';
-                    repoLinkElement.href = `https://github.com/${owner}/${repo}`;
-                    repoLinkElement.target = '_blank';
-                    projectElement.appendChild(repoLinkElement);
-
-                    const emptyElement = document.createElement('p');
-                    projectElement.appendChild(emptyElement);
-
-                    const iconElementGitHub = document.createElement('ion-icon');
-                    iconElementGitHub.setAttribute('name', 'logo-github');
-                    repoLinkElement.appendChild(iconElementGitHub);
-
-                    const latestReleaseLinkElement = document.createElement('a');
-                    latestReleaseLinkElement.textContent = 'Release overview ';
-                    latestReleaseLinkElement.href = latestReleaseLink;
-                    latestReleaseLinkElement.target = '_blank';
-                    projectElement.appendChild(latestReleaseLinkElement);
-
-                    const emptyElement2 = document.createElement('p');
-                    projectElement.appendChild(emptyElement2);
-
-                    const iconElementGitHub2 = document.createElement('ion-icon');
-                    iconElementGitHub2.setAttribute('name', 'logo-github');
-                    latestReleaseLinkElement.appendChild(iconElementGitHub2);
-
-                    latestRelease.assets.forEach(asset => {
-                        var platform = detectPlatform(asset.name);
-                        if (platform) {
-                            const downloadLinkElement = document.createElement('a');
-                            downloadLinkElement.classList.add('download-link');
-                            downloadLinkElement.textContent = `Download for ${platform} `;
-                            downloadLinkElement.href = asset.browser_download_url;
-                            projectElement.appendChild(downloadLinkElement);
-
-                            const iconElement = document.createElement('ion-icon');
-                            if (asset.name.endsWith(".apk")) {
-                                platform = "android";
-                            } else if (asset.name.endsWith(".zip") || asset.name.endsWith(".exe")) {
-                                platform = "windows";
-                            } else if (asset.name.endsWith(".dmg")) {
-                                platform = "apple";
-                            } else if (asset.name.endsWith(".tar.xz")) {
-                                platform = "tux";
-                            }
-                            iconElement.setAttribute('name', `logo-${platform.toLowerCase()}`);
-                            downloadLinkElement.appendChild(iconElement);
-
-                            const emptyElement = document.createElement('p');
-                            projectElement.appendChild(emptyElement);
-                        }
-                    });
-
-                    projectContainer.appendChild(projectElement);
+                    createProjectElement(project, description, latestVersion, latestReleaseLink, latestRelease.assets);
                 })
-                .catch(error => console.error('Failed to get latest release:', error));
+                .catch(error => {
+                    console.error('Failed to get latest release:', error);
+                    createProjectElement(project, description);
+                });
         })
-        .catch(error => console.error('Failed to get repo informations', error));
+        .catch(error => {
+            console.error('Failed to get repo informations', error);
+            createProjectElement(project);
+        });
 });
+
+function createProjectElement(project, description = 'Connection error', latestVersion = '', latestReleaseLink = '', assets = []) {
+    const projectName = project.name;
+
+    const projectElement = document.createElement('div');
+    projectElement.classList.add('project');
+
+    const projectElementTop = document.createElement('div');
+    projectElementTop.classList.add('project-top');
+
+    const titleElement = document.createElement('h2');
+    titleElement.textContent = projectName;
+    projectElementTop.appendChild(titleElement);
+
+    const projectIcon = document.createElement('img');
+    projectIcon.src = `./icons/${project.icon}`;
+    projectElementTop.appendChild(projectIcon);
+
+    projectElement.appendChild(projectElementTop);
+
+    if (project.links) {
+        project.links.forEach(link => {
+            const additionalLinkElement = document.createElement('a');
+            const storeImg = document.createElement('img');
+            storeImg.style.width = '150px';
+            storeImg.style.background = 'none';
+            storeImg.style.borderRadius = '0px';
+            storeImg.style.marginTop = '0px';
+            storeImg.src = './img/IzzyOnDroidButton_nofont.svg';
+            additionalLinkElement.appendChild(storeImg);
+            additionalLinkElement.href = link.url;
+            additionalLinkElement.target = '_blank';
+            projectElement.appendChild(additionalLinkElement);
+        });
+    }
+
+    if (description) {
+        const descriptionElement = document.createElement('p');
+        descriptionElement.classList.add('description');
+        descriptionElement.textContent = description;
+        projectElement.appendChild(descriptionElement);
+    }
+
+    if (latestVersion) {
+        const versionElement = document.createElement('p');
+        versionElement.classList.add('latest-version');
+        const staticText = document.createTextNode('Current version: ');
+        const strongElement = document.createElement('strong');
+        strongElement.textContent = latestVersion;
+        versionElement.appendChild(staticText);
+        versionElement.appendChild(strongElement);
+        projectElement.appendChild(versionElement);
+
+        const repoLinkElement = document.createElement('a');
+        repoLinkElement.textContent = 'Repository ';
+        repoLinkElement.href = `https://github.com/${project.githubRepo}`;
+        repoLinkElement.target = '_blank';
+        projectElement.appendChild(repoLinkElement);
+
+        const emptyElement = document.createElement('p');
+        projectElement.appendChild(emptyElement);
+
+        const iconElementGitHub = document.createElement('ion-icon');
+        iconElementGitHub.setAttribute('name', 'logo-github');
+        repoLinkElement.appendChild(iconElementGitHub);
+
+        const latestReleaseLinkElement = document.createElement('a');
+        latestReleaseLinkElement.textContent = 'Release overview ';
+        latestReleaseLinkElement.href = latestReleaseLink;
+        latestReleaseLinkElement.target = '_blank';
+        projectElement.appendChild(latestReleaseLinkElement);
+
+        const emptyElement2 = document.createElement('p');
+        projectElement.appendChild(emptyElement2);
+
+        const iconElementGitHub2 = document.createElement('ion-icon');
+        iconElementGitHub2.setAttribute('name', 'logo-github');
+        latestReleaseLinkElement.appendChild(iconElementGitHub2);
+
+        assets.forEach(asset => {
+            var platform = detectPlatform(asset.name);
+            if (platform) {
+                const downloadLinkElement = document.createElement('a');
+                downloadLinkElement.classList.add('download-link');
+                downloadLinkElement.textContent = `Download for ${platform} `;
+                downloadLinkElement.href = asset.browser_download_url;
+                projectElement.appendChild(downloadLinkElement);
+
+                const iconElement = document.createElement('ion-icon');
+                if (asset.name.endsWith(".apk")) {
+                    platform = "android";
+                } else if (asset.name.endsWith(".zip") || asset.name.endsWith(".exe")) {
+                    platform = "windows";
+                } else if (asset.name.endsWith(".dmg")) {
+                    platform = "apple";
+                } else if (asset.name.endsWith(".tar.xz")) {
+                    platform = "tux";
+                }
+                iconElement.setAttribute('name', `logo-${platform.toLowerCase()}`);
+                downloadLinkElement.appendChild(iconElement);
+
+                const emptyElement = document.createElement('p');
+                projectElement.appendChild(emptyElement);
+            }
+        });
+    }
+
+    projectContainer.appendChild(projectElement);
+}
 
 function detectPlatform(assetName) {
     if (assetName.endsWith(".apk")) {
